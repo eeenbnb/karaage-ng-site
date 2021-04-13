@@ -1,0 +1,13 @@
+$conteinerSize: 540px;
+
+@mixin MobileCss{
+  @media(max-width: $conteinerSize){
+    @content;
+  }
+}
+
+@mixin PcCss{
+  @media(min-width: $conteinerSize){
+    @content;
+  }
+}

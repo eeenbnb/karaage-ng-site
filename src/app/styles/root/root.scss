@@ -1,0 +1,11 @@
+@import "./root-variable-color.scss";
+@import "./root-variable-font-size.scss";
+
+:root{
+  @each $name, $var in $colors {
+    --color-#{$name}: #{$var};
+  }
+  @each $name, $var in $font-size {
+    --font-size-#{$name}: #{$var};
+  }
+}
