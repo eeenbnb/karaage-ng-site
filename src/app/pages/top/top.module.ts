@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TopRoutingModule } from './top-routing.module';
 import { TopComponent } from './top/top.component';
 
+import { CardOriginArtricModule } from '../../ui/card-origin-artric/card-origin-artric.module'
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { TopComponent } from './top/top.component';
   ],
   imports: [
     CommonModule,
-    TopRoutingModule
+    TopRoutingModule,
+    CardOriginArtricModule
   ]
 })
 export class TopModule { }

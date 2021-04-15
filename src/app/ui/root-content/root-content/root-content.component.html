@@ -1,10 +1,12 @@
 <main class="root-content">
-  <aside class="root-content-side">
-    サイドコンテンツ
-  </aside>
+  <header class="root-content-header">
+    <root-header></root-header>
+  </header>
 
   <div class="root-content-main">
-    <ng-content></ng-content>
+    <div class="root-content-main-inner">
+      <ng-content></ng-content>
+    </div>
   </div>
 
 </main>

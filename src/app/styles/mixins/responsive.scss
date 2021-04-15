@@ -1,4 +1,4 @@
-$conteinerSize: 540px;
+@import "../root/root-variable-size.scss";
 
 @mixin MobileCss{
   @media(max-width: $conteinerSize){
