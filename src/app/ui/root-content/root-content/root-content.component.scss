@@ -1,11 +1,10 @@
 @import "../../../styles/mixins/responsive.scss";
 
 .root-content{
-  min-height: 100vh;
+  min-height: calc(100vh);
   background-color: var(--color-Background);
-  // background-image: url('/assets/background/bg.jpg');
-  // background-size: 15px 15px;
-  // background-repeat: repeat space;
+  background-image: url('/assets/background/bg.svg');
+  background-size: 72px 72px;
 
   @include MobileCss{
 
@@ -28,6 +27,9 @@
     display: flex;
     justify-content: center;
     &-inner{
+      margin-top: var(--size-itemDistanceMargin);
+      margin-bottom: var(--size-itemDistanceMargin);
+      
       @include MobileCss{
         width: 100%;
         margin-left: var(--size-itemInnerPadding);
