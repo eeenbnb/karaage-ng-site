@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { RootHeaderComponent } from './root-header/root-header.component';
 
 
@@ -9,7 +10,8 @@ import { RootHeaderComponent } from './root-header/root-header.component';
     RootHeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     RootHeaderComponent

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ArticleType } from '../const-data/article';
+
 const routes: Routes = [
   {
     path: "",
@@ -9,6 +11,16 @@ const routes: Routes = [
   {
     path: "article",
     loadChildren: ()=> import("../pages/article/article.module").then(m => m.ArticleModule),
+    data:{
+      articleType: ArticleType.Article
+    }
+  },
+  {
+    path: "feature",
+    loadChildren: ()=> import("../pages/article/article.module").then(m => m.ArticleModule),
+    data:{
+      articleType: ArticleType.Feature
+    }
   },
 ];
 

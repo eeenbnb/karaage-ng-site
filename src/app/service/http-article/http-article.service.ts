@@ -24,4 +24,11 @@ export class HttpArticleService {
 
     return this.httpService.getURLDataToResponseTypeText(`assets/md-article/${parseData[0]}/${parseData[1]}/${parseData[2]}.md`);
   }
+
+  getFeatureData(name:string):Observable<string>{
+    if(!name){
+      return of("");
+    }
+    return this.httpService.getURLDataToResponseTypeText(`assets/md-feature/${name}.md`);
+  }
 }
