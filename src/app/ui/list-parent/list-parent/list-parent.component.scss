@@ -1,0 +1,14 @@
+.list{
+  list-child{
+    &:not(:first-child){
+      .one{
+        margin-top: var(--size-itemDistanceMargin);
+      }
+    }
+    &:not(:last-child){
+      .one{
+        margin-bottom: var(--size-itemDistanceMargin);
+      }
+    }
+  }
+}

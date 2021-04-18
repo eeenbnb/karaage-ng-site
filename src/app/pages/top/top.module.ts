@@ -6,6 +6,9 @@ import { TopComponent } from './top/top.component';
 
 import { CardOriginArtricModule } from '../../ui/card-origin-artric/card-origin-artric.module'
 
+import { ListParentModule } from '../../ui/list-parent/list-parent.module'
+import { ListChildModule } from '../../ui/list-child/list-child.module'
+
 @NgModule({
   declarations: [
     TopComponent
@@ -13,7 +16,10 @@ import { CardOriginArtricModule } from '../../ui/card-origin-artric/card-origin-
   imports: [
     CommonModule,
     TopRoutingModule,
-    CardOriginArtricModule
+    CardOriginArtricModule,
+
+    ListParentModule,
+    ListChildModule
   ]
 })
 export class TopModule { }

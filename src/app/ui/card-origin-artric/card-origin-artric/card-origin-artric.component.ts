@@ -6,9 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card-origin-artric.component.scss']
 })
 export class CardOriginArtricComponent implements OnInit {
+  @Input() path:string = "";
   @Input() image:string = "";
   @Input() title:string = "";
-  
+
   constructor() { }
 
   ngOnInit(): void {

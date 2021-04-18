@@ -1,22 +1,9 @@
-<div class="top">
-  <div class="top-memo">
-    <p>
-      ブログサービスを始める
-    </p>
-
-    <a href="https://twitter.com/sushi_karaage" target="_blank" rel="noreferrer">
-      twitter
-    </a>
-
-    <a href="https://github.com/eeenbnb/karaage.tokyo" target="_blank" rel="noreferrer">
-      repo
-    </a>
-  </div>
-
-  <div class="top-artric">
+<list-parent>
+  <list-child *ngFor="let item of topItems">
     <card-origin-artric
-      title="sample title"
+      [path]="item.path"
+      [title]="item.title"
     >
     </card-origin-artric>
-  </div>
-</div>
+  </list-child>
+</list-parent>
