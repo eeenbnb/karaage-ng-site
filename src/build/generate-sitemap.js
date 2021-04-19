@@ -5,11 +5,11 @@ const glob = require('glob');
 const builder = new xml2js.Builder();
 const urls = ["https://sushi.karaage.tokyo/#/"];
 const sitemap = {
-  sitemapindex:{
+  urlset:{
     $:{
       "xmlns": "http://www.sitemaps.org/schemas/sitemap/0.9"
     },
-    sitemap:[]
+    url:[]
   }
 };
 const files = glob.sync('./src/assets/data/top-*.json');
@@ -23,8 +23,8 @@ files.forEach(file => {
 
 urls.forEach(
   (v)=>{
-    sitemap.sitemapindex.sitemap.push({
-      loc:v
+    sitemap.urlset.url.push({
+      loc:v,
     })
   }
 );
