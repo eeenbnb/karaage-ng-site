@@ -1,5 +1,6 @@
 const fs = require('fs');
-const EndDate = ["2021","04","13.md"];
+const glob = require('glob');
+const EndDate = ["2021","04","13*.md"];
 
 let item = [];
 let sliceItem = [];
@@ -16,24 +17,19 @@ function newArticleList(dateFilePath = generateDate(),m = 0){
   if(checkEndDate(dateFilePath)){
     return ;
   }
-  let _dir = ['./src','assets','md-article'].concat(dateFilePath);
-  let _dirStr = _dir.join("/");
-  let f;
+  const _rootDir = ['src','assets','md-article'];
+  const _dir = _rootDir.concat(dateFilePath);
+  const _dirStr = _dir.join("/");
+  const files = glob.sync(_dirStr);
 
-  try {
-    if(fs.existsSync(_dirStr)){
-      f = fs.readFileSync(_dirStr,'utf8');
-    }
-  }catch (err) {
-    console.log(err);
-  }
-
-  if(f){
-    item.push({
-      path: dateFilePath.join("-").replace(".md",""),
-      title: f.split('\n')[0]
-    });
-  }
+ files.forEach(file => {
+   let f = fs.readFileSync(file,'utf8');
+   let path = file.replace(_rootDir.join("/"),"").replace(/\//g,"-").replace(".md","").slice(1);
+   item.push({
+     path: path,
+     title: f.split('\n')[0]
+   });
+ });
 
   m ++;
   newArticleList(generateDate(m),m);
@@ -45,7 +41,7 @@ function generateDate(minusDay = 0){
   return [
     String(day.getFullYear()),
     ('0' + (day.getMonth() + 1)).slice(-2),
-    ('0' + day.getDate()).slice(-2) + ".md",
+    ('0' + day.getDate()).slice(-2) + "*.md",
   ]
 }
 
