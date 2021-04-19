@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { RootContentComponent } from './root-content/root-content.component';
 
 import { RootHeaderModule } from '../root-header/root-header.module'
+import { ItemBreadcrumbModule } from '../item-breadcrumb/item-breadcrumb.module'
 
 @NgModule({
   declarations: [
@@ -12,8 +13,9 @@ import { RootHeaderModule } from '../root-header/root-header.module'
   imports: [
     CommonModule,
     RouterModule,
-    
+
     RootHeaderModule,
+    ItemBreadcrumbModule,
   ],
   exports: [
     RootContentComponent

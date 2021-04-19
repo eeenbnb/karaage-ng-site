@@ -1,0 +1,15 @@
+.breadcrumb{
+  list-style: none;
+  display: flex;
+  overflow-x: scroll;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  &__item{
+    margin-left: 4px;
+    &:not(:last-of-type):after{
+      content: " > ";
+      margin-right: 4px;
+    }
+  }
+}

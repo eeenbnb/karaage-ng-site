@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HttpTopService, TopItems } from '../../../service/http-top/http-top.service'
+import { BreadcrumbService } from '../../../service/breadcrumb/breadcrumb.service'
 
 @Component({
   selector: 'app-top',
@@ -13,7 +14,8 @@ export class TopComponent implements OnInit {
   isEnd:boolean = false;
 
   constructor(
-    private httpTopService:HttpTopService
+    private httpTopService:HttpTopService,
+    private breadcrumbService:BreadcrumbService
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +28,9 @@ export class TopComponent implements OnInit {
         this.isEnd = true;
       }
     );
+    this.breadcrumbService.setBreadcrumbs([
+      { path:["/"], name:"top" },
+    ])
   }
 
 }

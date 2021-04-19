@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { HttpArticleService } from '../../../service/http-article/http-article.service'
+import { BreadcrumbService } from '../../../service/breadcrumb/breadcrumb.service'
 
 import { ArticleType } from '../../../const-data/article'
 
@@ -12,6 +13,7 @@ import { ArticleType } from '../../../const-data/article'
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit, OnDestroy {
+  date:string = "";
   markdown:string = "";
   routerSubscription:Subscription;
 
@@ -20,7 +22,8 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   constructor(
     private activatedRoute:ActivatedRoute,
-    private httpArticleService:HttpArticleService
+    private httpArticleService:HttpArticleService,
+    private breadcrumbService:BreadcrumbService
   ) {
     this.articleType = this.activatedRoute.snapshot.data.articleType;
     this.routerSubscription = this.activatedRoute.paramMap.subscribe(
@@ -53,6 +56,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
     this.httpArticleService.getArticleData(date).subscribe(
       (data)=>{
         this.markdown = data;
+        this.setBreadcrumbs(date);
       },
       (_err)=>{
         this.setError();
@@ -64,11 +68,19 @@ export class ArticleComponent implements OnInit, OnDestroy {
     this.httpArticleService.getFeatureData(date).subscribe(
       (data)=>{
         this.markdown = data;
+        this.setBreadcrumbs(date);
       },
       (_err)=>{
         this.setError();
       }
     );
+  }
+
+  private setBreadcrumbs(date:string){
+    this.breadcrumbService.setBreadcrumbs([
+      { path:["/"], name:"top" },
+      { path:["/","article",date], name:this.markdown.split('\n')[0] },
+    ])
   }
 
   private setError():void{
