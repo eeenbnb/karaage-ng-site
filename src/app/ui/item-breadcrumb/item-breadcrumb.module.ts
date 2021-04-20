@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ItemBreadcrumbComponent } from './item-breadcrumb/item-breadcrumb.component';
 
-
+import { CardOriginModule } from '../card-origin/card-origin.module'
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { ItemBreadcrumbComponent } from './item-breadcrumb/item-breadcrumb.compo
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    CardOriginModule
   ],
   exports: [
     ItemBreadcrumbComponent

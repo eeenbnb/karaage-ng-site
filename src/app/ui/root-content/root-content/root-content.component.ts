@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { GaService } from '../../../service/ga/ga.service'
+import { CanonicalService } from '../../../service/canonical/canonical.service'
 
 @Component({
   selector: 'root-content',
@@ -15,11 +16,13 @@ export class RootContentComponent implements OnInit, OnDestroy {
 
   constructor(
     private router:Router,
-    private gaService:GaService
+    private gaService:GaService,
+    private canonicalService:CanonicalService
   ) {
     this.navigationEndSubscription = this.router.events.pipe( filter(event => event instanceof NavigationEnd) ).subscribe(
       (params: any) => {
         this.gaService.sendPageView(params.url);
+        this.canonicalService.setCanonicalURL();
       }
     );
   }

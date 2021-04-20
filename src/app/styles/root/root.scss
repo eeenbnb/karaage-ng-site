@@ -1,6 +1,8 @@
+@import "../mixins/responsive.scss";
 @import "./root-variable-color.scss";
 @import "./root-variable-font-size.scss";
 @import "./root-variable-size.scss";
+@import "./root-variable-icons.scss";
 
 :root{
   @each $name, $var in $colors {
@@ -9,7 +11,19 @@
   @each $name, $var in $font-size {
     --font-size-#{$name}: #{$var};
   }
-  @each $name, $var in $size {
-    --size-#{$name}: #{$var};
+  @each $name, $var in $icons {
+    --icon-#{$name}: #{$var};
+  }
+
+  //responsive
+  @include PcCss{
+    @each $name, $var in $pc-size {
+      --size-#{$name}: #{$var};
+    }
+  }
+  @include MobileCss{
+    @each $name, $var in $mobile-size {
+      --size-#{$name}: #{$var};
+    }
   }
 }

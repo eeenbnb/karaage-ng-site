@@ -1,11 +1,22 @@
 $conteinerSize: 720px;
-$itemDistanceMargin: 48px;
+$itemDistanceMargin: 24px;
 $itemInnerPadding: 24px;
 
-$size:
+$mobile-itemDistanceMargin: 12px;
+$mobile-itemInnerPadding: 12px;
+
+$pc-size:
   "header" 50px,
   "conteinerSize" $conteinerSize,
   "cardBorder" 20px,
-  "itemDistanceMargin" 24px,
-  "itemInnerPadding" 24px,
+  "itemDistanceMargin" $itemDistanceMargin,
+  "itemInnerPadding" $itemInnerPadding,
+;
+
+$mobile-size:
+  "header" 50px,
+  "conteinerSize" $conteinerSize,
+  "cardBorder" 20px,
+  "itemDistanceMargin" $mobile-itemDistanceMargin,
+  "itemInnerPadding" $mobile-itemInnerPadding,
 ;
