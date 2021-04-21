@@ -5,6 +5,7 @@
 転勤族の家系に生まれ長野県を18まで転々としていた。  
 一番長いのが松本。  
 
+
 ## スキルセット
 Apache, Nginx, MySql, PostgreSQL,  
 PHP, Ruby, Python, Scala, javaScript, TypeScript, GCC,  
@@ -31,9 +32,9 @@ jquery, Angular, AngularJs, React.js, Vue.js, Cordova, WebPack,
 - 2013 ~ 2017
   - 千葉工業大学　情報科学部　情報工学科　在籍
     - 電子工作からソフトウェア開発へと移り、サークルにて電子工作とWebを絡めた様々な機器を開発。
-    - アルバイト等で業務のソフトウェアを初めて起こった。
+    - アルバイト等で業務のソフトウェアを初めて行う。
 
 
 - 2010 ~ 2013
-  - 松本工業高校卒
+  - 松本工業高校　電子工業科　在籍
     - 電子工学部に入りルネサス社のH8、R8マイコンを使用。C言語を学ぶ

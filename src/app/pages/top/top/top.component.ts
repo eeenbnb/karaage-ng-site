@@ -12,6 +12,7 @@ import { TitleMetaService } from '../../../service/title-meta/title-meta.service
 export class TopComponent implements OnInit, OnDestroy {
   topItems:TopItems = [];
   pageCount:number = 1;
+  isFirstLoadComplate:boolean = false;
   isEnd:boolean = false;
 
   constructor(
@@ -21,15 +22,7 @@ export class TopComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.httpTopService.getTopData(this.pageCount).subscribe(
-      (list:TopItems)=>{
-        this.topItems = this.topItems.concat(list);
-        this.pageCount ++;
-      },
-      (err)=>{
-        this.isEnd = true;
-      }
-    );
+    this.getItems();
     this.breadcrumbService.setBreadcrumbs([
       { path:["/"], name:"top" },
     ])
@@ -44,6 +37,25 @@ export class TopComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.titleMetaService.removeMetaData();
+  }
+
+  private getItems(){
+    if(this.isEnd) return;
+    
+    this.httpTopService.getTopData(this.pageCount).subscribe(
+      (list:TopItems)=>{
+        this.topItems = this.topItems.concat(list);
+        this.isFirstLoadComplate = true;
+        this.pageCount ++;
+      },
+      (err)=>{
+        this.isEnd = true;
+      }
+    );
+  }
+
+  bottomLoad(){
+    this.getItems();
   }
 
 }

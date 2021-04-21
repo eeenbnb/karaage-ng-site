@@ -6,6 +6,8 @@ import { TopComponent } from './top/top.component';
 
 import { CardOriginArtricModule } from '../../ui/card-origin-artric/card-origin-artric.module'
 
+import { ItemIntersectionObserverModule } from '../../ui/item-intersection-observer/item-intersection-observer.module'
+
 import { ListParentModule } from '../../ui/list-parent/list-parent.module'
 import { ListChildModule } from '../../ui/list-child/list-child.module'
 
@@ -16,7 +18,10 @@ import { ListChildModule } from '../../ui/list-child/list-child.module'
   imports: [
     CommonModule,
     TopRoutingModule,
+
     CardOriginArtricModule,
+
+    ItemIntersectionObserverModule,
 
     ListParentModule,
     ListChildModule

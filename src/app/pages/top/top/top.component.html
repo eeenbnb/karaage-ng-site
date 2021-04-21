@@ -8,4 +8,9 @@
     >
     </card-origin-artric>
   </list-child>
+  <item-intersection-observer
+    (viewEvent)="bottomLoad()"
+    *ngIf="isFirstLoadComplate"
+  >
+  </item-intersection-observer>
 </list-parent>
