@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "node src/build/generate-list.js && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer && cp CNAME ./docs/CNAME && node src/build/generate-sitemap.js",
+    "build:netlify": "node src/build/generate-list.js && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer && node src/build/generate-sitemap.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

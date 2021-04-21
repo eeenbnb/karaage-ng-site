@@ -7,13 +7,14 @@
 
 - [x] top用データ生成スクリプト
 - [x] top用データの表示
+- [ ] topページのintersector-Observables
 - [x] sitemap生成スクリプト
 - [ ] faviconの作成
-- [ ] titleとmeta
+- [x] titleとmeta
 
 
 - [ ] 記事ページデザイン修正
-- [ ] パンくずデザイン修正
+- [x] パンくずデザイン修正
 
 - [ ] 月間用データ生成スクリプト
 - [ ] 月間表示ページの作成
@@ -21,6 +22,7 @@
 
 
 - [ ] ogp対応
+- [ ] prerender.io
 - [ ] build時にassetsの圧縮
   - どちらかというとビルド終了後にassetsを圧縮する？
 
