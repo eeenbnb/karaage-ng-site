@@ -24,14 +24,15 @@
 
   &-main{
     padding-top: var(--size-header);
-    display: flex;
-    justify-content: center;
+    @include PcCss{
+      display: flex;
+      justify-content: center;
+    }
     &-inner{
       margin-top: var(--size-itemDistanceMargin);
       margin-bottom: var(--size-itemDistanceMargin);
 
       @include MobileCss{
-        width: 100%;
         margin-left: var(--size-itemInnerPadding);
         margin-right: var(--size-itemInnerPadding);
       }
