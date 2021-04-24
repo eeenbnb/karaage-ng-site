@@ -27,7 +27,7 @@ function newArticleList(dateFilePath = generateDate(),m = 0){
    let path = file.replace(_rootDir.join("/"),"").replace(/\//g,"-").replace(".md","").slice(1);
    item.push({
      path: path,
-     title: f.split('\n')[0]
+     title: f.split('\n')[0].replace("#","")
    });
  });
 

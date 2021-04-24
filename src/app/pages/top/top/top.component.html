@@ -1,6 +1,12 @@
-<h1>Sushi karaage</h1>
-
 <list-parent>
+  <!-- title -->
+  <list-child>
+    <card-origin-title>
+      Sushi karaage
+    </card-origin-title>
+  </list-child>
+
+  <!-- items -->
   <list-child *ngFor="let item of topItems">
     <card-origin-artric
       [path]="item.path"
@@ -8,6 +14,8 @@
     >
     </card-origin-artric>
   </list-child>
+
+  <!-- bottom -->
   <item-intersection-observer
     (viewEvent)="bottomLoad()"
     *ngIf="isFirstLoadComplate"

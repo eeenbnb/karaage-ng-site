@@ -1,15 +1,19 @@
 <a class="link" [routerLink]="['article',path]">
   <card-origin>
-    <div class="image">
-      <img class="image-img"/>
+    <div class="link-inner">
+      <div class="link-inner__image">
+        <img class="link-inner__image__img" src="assets/img/no-img.png"/>
+      </div>
+
+      <div class="link-inner__content">
+        <h3 class="link-inner__content__title">
+          {{title}}
+        </h3>
+
+        <button class="link-inner__content__button">
+          見る
+        </button>
+      </div>
     </div>
-
-    <h3 class="title">
-      {{title}}
-    </h3>
-
-    <button class="button">
-      見る
-    </button>
   </card-origin>
 </a>

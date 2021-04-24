@@ -3,15 +3,20 @@
 - [x] パンくずリストの作成
 - [ ] footerなんか考える。
 - [ ] google ad 導入
+- [ ] blog 構造化データの追加
 
 
 - [x] top用データ生成スクリプト
 - [x] top用データの表示
 - [x] topページのintersector-Observables
 - [x] sitemap生成スクリプト
-- [ ] faviconの作成
 - [x] titleとmeta
+- [ ] faviconの作成
+- [ ] サイドコンテンツを考える
 
+
+- [ ] タグ追加
+- [ ] 日時追加
 
 - [x] 記事ページデザイン修正
 - [x] パンくずデザイン修正

@@ -5,6 +5,7 @@ import { TopRoutingModule } from './top-routing.module';
 import { TopComponent } from './top/top.component';
 
 import { CardOriginArtricModule } from '../../ui/card-origin-artric/card-origin-artric.module'
+import { CardOriginTitleModule } from '../../ui/card-origin-title/card-origin-title.module'
 
 import { ItemIntersectionObserverModule } from '../../ui/item-intersection-observer/item-intersection-observer.module'
 
@@ -20,6 +21,7 @@ import { ListChildModule } from '../../ui/list-child/list-child.module'
     TopRoutingModule,
 
     CardOriginArtricModule,
+    CardOriginTitleModule,
 
     ItemIntersectionObserverModule,
 
