@@ -7,7 +7,7 @@
 }
 
 @mixin SideHidenCss{
-  @media(max-width: $conteinerSize + ($sideItemSize * 2) + ($itemDistanceMargin * 4)){
+  @media(max-width: $maxPcWidthSize){
     @content;
   }
 }

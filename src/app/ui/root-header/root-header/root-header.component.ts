@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./root-header.component.scss']
 })
 export class RootHeaderComponent implements OnInit {
+  isViewHumItem:boolean = false;
 
   constructor() { }
 

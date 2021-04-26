@@ -4,6 +4,17 @@
       Sushi karaage
     </a>
 
-    <div class="header__inner__hum"></div>
+    <div class="header__inner__hum" (click)="isViewHumItem = !isViewHumItem"></div>
+
+    <div class="hum-item" [attr.is-view]="isViewHumItem">
+      <card-origin [isNoPadding]="true">
+        <a class="hum-item__one" routerLink="/feature/profile" (click)="isViewHumItem = false">
+          自己紹介
+        </a>
+        <a class="hum-item__one" routerLink="/feature/feature" (click)="isViewHumItem = false">
+          開発ログ
+        </a>
+      </card-origin>
+    </div>
   </div>
 </div>

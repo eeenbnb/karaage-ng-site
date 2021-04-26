@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { RootHeaderComponent } from './root-header/root-header.component';
 
-
+import { CardOriginModule } from '../card-origin/card-origin.module'
 
 @NgModule({
   declarations: [
@@ -11,7 +11,9 @@ import { RootHeaderComponent } from './root-header/root-header.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+
+    CardOriginModule
   ],
   exports: [
     RootHeaderComponent

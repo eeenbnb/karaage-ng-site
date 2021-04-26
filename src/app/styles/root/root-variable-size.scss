@@ -1,7 +1,10 @@
 $conteinerSize: 720px;
 $sideItemSize: 240px;
+
 $itemDistanceMargin: 24px;
 $itemInnerPadding: 24px;
+
+$maxPcWidthSize: $conteinerSize + ($sideItemSize * 2) + ($itemDistanceMargin * 4);
 
 $mobile-itemDistanceMargin: 12px;
 $mobile-itemInnerPadding: 12px;
@@ -10,6 +13,7 @@ $pc-size:
   "header" 50px,
   "conteinerSize" $conteinerSize,
   "sideItemSize" $sideItemSize,
+  "maxPcWidthSize" $maxPcWidthSize,
   "cardBorder" 20px,
   "itemDistanceMargin" $itemDistanceMargin,
   "itemInnerPadding" $itemInnerPadding,
@@ -19,6 +23,7 @@ $mobile-size:
   "header" 50px,
   "conteinerSize" $conteinerSize,
   "sideItemSize" $sideItemSize,
+  "maxPcWidthSize" $maxPcWidthSize,
   "cardBorder" 20px,
   "itemDistanceMargin" $mobile-itemDistanceMargin,
   "itemInnerPadding" $mobile-itemInnerPadding,
