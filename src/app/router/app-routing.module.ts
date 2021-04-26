@@ -7,6 +7,9 @@ const routes: Routes = [
   {
     path: "",
     loadChildren: ()=> import("../pages/top/top.module").then(m => m.TopModule),
+    data:{
+      breadcrumb: false,
+    }
   },
   {
     path: "article",

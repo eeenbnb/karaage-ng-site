@@ -6,6 +6,12 @@
   }
 }
 
+@mixin SideHidenCss{
+  @media(max-width: $conteinerSize + ($sideItemSize * 2) + ($itemDistanceMargin * 4)){
+    @content;
+  }
+}
+
 @mixin PcCss{
   @media(min-width: $conteinerSize){
     @content;

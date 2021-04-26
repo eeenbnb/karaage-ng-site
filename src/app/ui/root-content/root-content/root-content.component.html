@@ -4,13 +4,18 @@
   </header>
 
   <div class="root-content-main">
+    <aside class="root-content-side">
+      <root-side></root-side>
+    </aside>
+
     <div class="root-content-main-inner">
-      <div class="root-content-main-inner-breadcrumb">
+      <div class="root-content-main-inner-breadcrumb" *ngIf="isBreadcrumb">
         <item-breadcrumb></item-breadcrumb>
       </div>
-
       <ng-content></ng-content>
     </div>
+
+    <aside class="root-content-side"></aside>
   </div>
 
 </main>

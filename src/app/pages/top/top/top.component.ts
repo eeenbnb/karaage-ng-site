@@ -23,9 +23,7 @@ export class TopComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getItems();
-    this.breadcrumbService.setBreadcrumbs([
-      { path:["/"], name:"top" },
-    ])
+    this.breadcrumbService.setBreadcrumbs([]);
     this.titleMetaService.setTitle("sushi karaage")
     this.titleMetaService.setMetaData(
       this.titleMetaService.getCoalescenceMetaDefinition([
@@ -41,7 +39,7 @@ export class TopComponent implements OnInit, OnDestroy {
 
   private getItems(){
     if(this.isEnd) return;
-    
+
     this.httpTopService.getTopData(this.pageCount).subscribe(
       (list:TopItems)=>{
         this.topItems = this.topItems.concat(list);
