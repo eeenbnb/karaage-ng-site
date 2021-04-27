@@ -14,7 +14,9 @@
 - [x] サイドコンテンツを考える
 - [ ] footerなんか考える。
 - [ ] 404ページ
-- [ ] stroybook導入
+- [x] stroybook導入
+  - https://sushi.karaage.tokyo/assets/stroybook
+
 
 - [x] タグ追加
 - [x] 日時追加
