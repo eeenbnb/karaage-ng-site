@@ -15,8 +15,6 @@
 - [ ] footerなんか考える。
 - [ ] 404ページ
 - [x] stroybook導入
-  - https://sushi.karaage.tokyo/assets/stroybook
-
 
 - [x] タグ追加
 - [x] 日時追加
