@@ -46,6 +46,7 @@ typescript                      4.1.5
 
 ```bash
 src
+├── @types         // custom @types
 ├── app
 │   ├── const-data // 定数
 │   ├── pages      // ページ

@@ -2,12 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service'
 
 import { Observable, of } from 'rxjs';
-
-export interface TopItem{
-  path:string,
-  title:string,
-}
-export type TopItems = TopItem[];
+import { KaraageArticle } from 'src/@types/karaage-article';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +13,7 @@ export class HttpTopService {
     private httpService:HttpService
   ) { }
 
-  getTopData(page = 1):Observable<TopItems>{
+  getTopData(page = 1):Observable<KaraageArticle[]>{
     return this.httpService.getURLDataToResponseTypeJson(`assets/data/top-${page}.json`);
   }
 }

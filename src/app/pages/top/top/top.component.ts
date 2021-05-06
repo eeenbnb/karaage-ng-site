@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { HttpTopService, TopItems } from '../../../service/http-top/http-top.service'
+import { HttpTopService } from '../../../service/http-top/http-top.service'
 import { BreadcrumbService } from '../../../service/breadcrumb/breadcrumb.service'
 import { TitleMetaService } from '../../../service/title-meta/title-meta.service'
+
+import { KaraageArticle } from 'src/@types/karaage-article';
 
 @Component({
   selector: 'app-top',
@@ -10,7 +12,7 @@ import { TitleMetaService } from '../../../service/title-meta/title-meta.service
   styleUrls: ['./top.component.scss']
 })
 export class TopComponent implements OnInit, OnDestroy {
-  topItems:TopItems = [];
+  topItems:KaraageArticle[] = [];
   pageCount:number = 1;
   isFirstLoadComplate:boolean = false;
   isEnd:boolean = false;
@@ -41,7 +43,7 @@ export class TopComponent implements OnInit, OnDestroy {
     if(this.isEnd) return;
 
     this.httpTopService.getTopData(this.pageCount).subscribe(
-      (list:TopItems)=>{
+      (list:KaraageArticle[])=>{
         this.topItems = this.topItems.concat(list);
         this.isFirstLoadComplate = true;
         this.pageCount ++;

@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { BreadcrumbService, Breadcrumbs } from '../../../service/breadcrumb/breadcrumb.service'
+import { BreadcrumbService } from '../../../service/breadcrumb/breadcrumb.service'
+import { KaraageBreadcrumbs } from 'src/@types/karaage-breadcrumb';
 
 @Component({
   selector: 'item-breadcrumb',
@@ -9,14 +10,14 @@ import { BreadcrumbService, Breadcrumbs } from '../../../service/breadcrumb/brea
   styleUrls: ['./item-breadcrumb.component.scss']
 })
 export class ItemBreadcrumbComponent implements OnInit, OnDestroy {
-  breadcrumbs:Breadcrumbs = [];
+  breadcrumbs:KaraageBreadcrumbs = [];
   breadcrumbsSubscription:Subscription;
 
   constructor(
     private breadcrumbService:BreadcrumbService
   ) {
     this.breadcrumbsSubscription = this.breadcrumbService.getBreadcrumbsChageEvent().subscribe(
-      (breadcrumbs:Breadcrumbs)=>{
+      (breadcrumbs:KaraageBreadcrumbs)=>{
         this.breadcrumbs = breadcrumbs;
       }
     );

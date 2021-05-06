@@ -1,27 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
-export interface Breadcrumb{
-  path:string[],
-  name:string,
-}
-export type Breadcrumbs = Breadcrumb[];
+import { KaraageBreadcrumbs } from 'src/@types/karaage-breadcrumb';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BreadcrumbService {
-  private setItem:Breadcrumbs = []
-  private sharedDataSource = new Subject<Breadcrumbs>();
+  private setItem:KaraageBreadcrumbs = []
+  private sharedDataSource = new Subject<KaraageBreadcrumbs>();
   private sharedDataSourceObservable = this.sharedDataSource.asObservable();
 
   constructor() { }
 
-  getBreadcrumbsChageEvent():Observable<Breadcrumbs>{
+  getBreadcrumbsChageEvent():Observable<KaraageBreadcrumbs>{
     return this.sharedDataSourceObservable;
   }
 
-  setBreadcrumbs(breadcrumbs:Breadcrumbs):void{
+  setBreadcrumbs(breadcrumbs:KaraageBreadcrumbs):void{
     this.setItem = breadcrumbs;
     this.sharedDataSource.next(breadcrumbs);
   }

@@ -13,23 +13,35 @@ sliceItem.forEach((v,i)=>{
   });
 });
 
+fs.writeFileSync(`./src/assets/data/all.json`,JSON.stringify(item),(err)=>{
+  if(err) console.log(err);
+});
+
+
+//
 function newArticleList(dateFilePath = generateDate(),m = 0){
   if(checkEndDate(dateFilePath)){
     return ;
   }
   const _rootDir = ['src','assets','md-article'];
+  const _imgDir = ['src','assets','img'];
   const _dir = _rootDir.concat(dateFilePath);
   const _dirStr = _dir.join("/");
   const files = glob.sync(_dirStr);
 
- files.forEach(file => {
-   let f = fs.readFileSync(file,'utf8');
-   let path = file.replace(_rootDir.join("/"),"").replace(/\//g,"-").replace(".md","").slice(1);
-   item.push({
-     path: path,
-     title: f.split('\n')[0].replace("#","")
-   });
- });
+  files.forEach(file => {
+    let f = fs.readFileSync(file,'utf8');
+    let path = file.replace(_rootDir.join("/"),"").replace(/\//g,"-").replace(".md","").slice(1);
+    let thumbnailPath = _imgDir.concat(dateFilePath).join("/").replace(/\*/g,"").replace(".md","") + "/thumbnail.png";
+    let isThumbnail = fs.existsSync(thumbnailPath);
+
+    item.push({
+      path: path,
+      title: f.split('\n')[0].replace("#",""),
+      thumbnail: isThumbnail ? thumbnailPath.replace("src/","") : "assets/img/no-img.png"
+    });
+
+  });
 
   m ++;
   newArticleList(generateDate(m),m);
