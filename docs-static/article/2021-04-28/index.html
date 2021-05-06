@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="ja"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title> nuxt.jsを使ってみる | sushi karaage</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.b007dd4b1a6309137c1b.css"><style></style><style>.root-content[_ngcontent-dqi-c12]{min-height:calc(100vh);background-color:var(--color-Background);background-image:url(/assets/background/bg.svg);background-size:72px 72px}.root-content-header[_ngcontent-dqi-c12]{width:100vw;height:var(--size-header);position:fixed;top:0;left:0}.root-content-side[_ngcontent-dqi-c12]{margin:var(--size-itemDistanceMargin)}@media (min-width:720px){.root-content-side[_ngcontent-dqi-c12]{width:var(--size-sideItemSize)}}@media (max-width:1296px){.root-content-side[_ngcontent-dqi-c12]{width:var(--size-conteinerSize);margin-bottom:0}}@media (max-width:720px){.root-content-side[_ngcontent-dqi-c12]{width:auto}}.root-content-side[_ngcontent-dqi-c12]:empty{height:0}.root-content-main[_ngcontent-dqi-c12]{padding-top:var(--size-header)}@media (min-width:720px){.root-content-main[_ngcontent-dqi-c12]{display:flex;justify-content:center}}@media (max-width:1296px){.root-content-main[_ngcontent-dqi-c12]{flex-direction:column;align-items:center}}.root-content-main-inner[_ngcontent-dqi-c12]{margin-top:var(--size-itemDistanceMargin);margin-bottom:var(--size-itemDistanceMargin)}@media (max-width:720px){.root-content-main-inner[_ngcontent-dqi-c12]{margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}@media (min-width:720px){.root-content-main-inner[_ngcontent-dqi-c12]{width:var(--size-conteinerSize)}}.root-content-main-inner-breadcrumb[_ngcontent-dqi-c12]{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.header[_ngcontent-dqi-c7]{width:100%;height:100%;background-color:var(--color-Highlight);box-shadow:0 3px 6px rgba(0,0,0,.16)}@media (min-width:720px){.header[_ngcontent-dqi-c7]{display:flex;align-items:center;justify-content:center}}.header__inner[_ngcontent-dqi-c7]{height:100%;display:flex;align-items:center;position:relative}@media (min-width:720px){.header__inner[_ngcontent-dqi-c7]{width:var(--size-maxPcWidthSize)}}@media (max-width:1296px){.header__inner[_ngcontent-dqi-c7]{width:var(--size-conteinerSize)}}@media (max-width:720px){.header__inner[_ngcontent-dqi-c7]{width:auto;margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}.header__inner__a[_ngcontent-dqi-c7]{font-size:24px;color:var(--color-Paragraph)}.header__inner__hum[_ngcontent-dqi-c7]{margin-left:auto;width:24px;height:20px;-webkit-mask-image:url(/assets/icons/hum.svg);mask-image:url(/assets/icons/hum.svg);background-color:var(--color-Paragraph)}.hum-item[_ngcontent-dqi-c7]{width:var(--size-sideItemSize);display:none;position:absolute;top:calc(var(--size-header) + 12px);right:0;overflow:hidden;border-radius:var(--size-cardBorder);box-shadow:0 3px 6px rgba(0,0,0,.16)}.hum-item[is-view=true][_ngcontent-dqi-c7]{display:block}.hum-item__one[_ngcontent-dqi-c7]{display:block;padding:12px;color:var(--color-Headline)}.hum-item__one[_ngcontent-dqi-c7]:not(:last-child){border-bottom:1px solid var(--color-Paragraph)}</style><style>.image[_ngcontent-dqi-c10]{display:flex;justify-content:center}.image__img[_ngcontent-dqi-c10]{width:64px;height:64px;border-radius:32px;object-fit:contain}.title[_ngcontent-dqi-c10]{color:var(--color-Paragraph);font-size:16px}.link[_ngcontent-dqi-c10]{display:flex;flex-direction:column}.link[_ngcontent-dqi-c10]   a[_ngcontent-dqi-c10]{color:var(--color-Highlight);font-size:16px}</style><style>.card-origin[_ngcontent-dqi-c6]{padding:var(--size-itemInnerPadding);background-color:var(--color-Main);border:3px solid var(--color-Paragraph);border-radius:var(--size-cardBorder)}.card-origin[no-padding=true][_ngcontent-dqi-c6]{padding:0}</style><style>.list list-child:not(:first-child) .one{margin-top:var(--size-itemDistanceMargin)}.list list-child:not(:last-child) .one{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.breadcrumb[_ngcontent-dqi-c11]{list-style:none;display:flex;flex-wrap:nowrap;overflow-x:scroll}.breadcrumb[_ngcontent-dqi-c11]::-webkit-scrollbar{display:none}.breadcrumb__item[_ngcontent-dqi-c11]{margin-left:4px;white-space:nowrap}.breadcrumb__item[_ngcontent-dqi-c11]   a[_ngcontent-dqi-c11]{color:var(--color-Highlight);font-size:16px}.breadcrumb__item[_ngcontent-dqi-c11]:not(:last-of-type):after{content:" > ";margin-right:4px}</style><script charset="utf-8" src="common.557bfe2abbe6d33e6388.js"></script><script charset="utf-8" src="7.456eea205d4e4b7f3cf3.js"></script><script charset="utf-8" src="2.029f6ba71af8a9abc1fe.js"></script><style>@charset "UTF-8";.info{display:flex}.info__date{color:var(--color-Stroke);font-size:14px;margin-right:4px}.info__date:before{content:"📅";margin-right:4px}.info__tags{display:flex}.info__tags__one{margin-right:4px;padding-left:4px;padding-right:4px;color:var(--color-Stroke);font-size:14px;border:1px solid var(--color-Headline);border-radius:8px}</style><link rel="canonical" href="http://localhost:1864/article/2021-04-28"><meta name="keywords" content="blog, Angular"><meta name="description" content="# nuxt.jsを使ってみる
+<div class=&quot;info&quot;>
+  <p class=&quot;info__date&quot;>
+    2021/04/28
+  </p>
+  <div class=&quot;info__tags&quot;>
+    <p class=&quot;info__tags__one&quot;>Nuxt.js</p>
+  </div>
+</div>
+
+ずっと `Angular` を使っていたけど他に勉強するべきだと思ってきた。  
+`Attribute bind` などのテンプレートシンタックスが近い `vue.js` でのフルスタックフレームワークでなんかやりたい。  
+なので `nuxt.js` を使う。"><meta name="og:site_name" content=" nuxt.jsを使ってみる | sushi karaage"><meta name="og:description" content="# nuxt.jsを使ってみる
+<div class=&quot;info&quot;>
+  <p class=&quot;info__date&quot;>
+    2021/04/28
+  </p>
+  <div class=&quot;info__tags&quot;>
+    <p class=&quot;info__tags__one&quot;>Nuxt.js</p>
+  </div>
+</div>
+
+ずっと `Angular` を使っていたけど他に勉強するべきだと思ってきた。  
+`Attribute bind` などのテンプレートシンタックスが近い `vue.js` でのフルスタックフレームワークでなんかやりたい。  
+なので `nuxt.js` を使う。"><meta name="og:title" content=" nuxt.jsを使ってみる | sushi karaage"><meta name="og:url" content="https://sushi.karaage.tokyo/#/article/2021-04-28"><meta name="og:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="twitter:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="og:type" content="website"><meta name="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@sushi_karaage"><script>window['ScullyIO']='generated';</script></head>
+
+  <body scully-version="1.1.1">
+    <app-root _nghost-dqi-c13="" ng-version="11.2.9"><root-content _ngcontent-dqi-c13="" _nghost-dqi-c12=""><main _ngcontent-dqi-c12="" class="root-content"><header _ngcontent-dqi-c12="" class="root-content-header"><root-header _ngcontent-dqi-c12="" _nghost-dqi-c7=""><div _ngcontent-dqi-c7="" class="header"><div _ngcontent-dqi-c7="" class="header__inner"><a _ngcontent-dqi-c7="" routerlink="/" class="header__inner__a" href="/"> Sushi karaage </a><div _ngcontent-dqi-c7="" class="header__inner__hum"></div><div _ngcontent-dqi-c7="" class="hum-item" is-view="false"><card-origin _ngcontent-dqi-c7="" _nghost-dqi-c6=""><div _ngcontent-dqi-c6="" class="card-origin" no-padding="true"><a _ngcontent-dqi-c7="" routerlink="/feature/profile" class="hum-item__one" href="/feature/profile"> 自己紹介 </a><a _ngcontent-dqi-c7="" routerlink="/feature/site" class="hum-item__one" href="/feature/site"> このサイトについて </a><a _ngcontent-dqi-c7="" routerlink="/feature/feature" class="hum-item__one" href="/feature/feature"> 開発ログ </a></div></card-origin></div></div></div></root-header></header><div _ngcontent-dqi-c12="" class="root-content-main"><aside _ngcontent-dqi-c12="" class="root-content-side"><root-side _ngcontent-dqi-c12="" _nghost-dqi-c10=""><card-origin _ngcontent-dqi-c10="" _nghost-dqi-c6=""><div _ngcontent-dqi-c6="" class="card-origin" no-padding="false"><list-parent _ngcontent-dqi-c10=""><div class="list"><list-child _ngcontent-dqi-c10=""><div class="one"><div _ngcontent-dqi-c10="" class="image"><img _ngcontent-dqi-c10="" src="assets/img/no-img.png" alt="jinya kitazumeの画像" class="image__img"></div></div></list-child><list-child _ngcontent-dqi-c10=""><div class="one"><p _ngcontent-dqi-c10="" class="title"> sushi karaage </p><div _ngcontent-dqi-c10="" class="link"><a _ngcontent-dqi-c10="" href="https://github.com/eeenbnb" target="_blank" rel="noreferrer"> github </a><a _ngcontent-dqi-c10="" href="https://twitter.com/sushi_karaage" target="_blank" rel="noreferrer"> twitter </a></div></div></list-child></div></list-parent></div></card-origin></root-side></aside><div _ngcontent-dqi-c12="" class="root-content-main-inner"><div _ngcontent-dqi-c12="" class="root-content-main-inner-breadcrumb"><item-breadcrumb _ngcontent-dqi-c12="" _nghost-dqi-c11=""><card-origin _ngcontent-dqi-c11="" _nghost-dqi-c6=""><div _ngcontent-dqi-c6="" class="card-origin" no-padding="false"><ol _ngcontent-dqi-c11="" itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li _ngcontent-dqi-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-dqi-c11="" itemprop="item" href="/"><span _ngcontent-dqi-c11="" itemprop="name">top</span></a><meta _ngcontent-dqi-c11="" itemprop="position" content="0"></li><!----><li _ngcontent-dqi-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-dqi-c11="" itemprop="item" href="/article/2021-04-28"><span _ngcontent-dqi-c11="" itemprop="name"> nuxt.jsを使ってみる</span></a><meta _ngcontent-dqi-c11="" itemprop="position" content="1"></li><!----><!----></ol></div></card-origin><!----></item-breadcrumb></div><!----><router-outlet _ngcontent-dqi-c13=""></router-outlet><app-article _nghost-dqi-c19=""><div _ngcontent-dqi-c19="" class="article"><card-origin _ngcontent-dqi-c19="" _nghost-dqi-c6=""><div _ngcontent-dqi-c6="" class="card-origin" no-padding="false"><item-article _ngcontent-dqi-c19=""><div class="item-article markdown-body"><markdown><h1 id="nuxtjsを使ってみる">nuxt.jsを使ってみる</h1>
+<div class="info">
+  <p class="info__date">
+    2021/04/28
+  </p>
+  <div class="info__tags">
+    <p class="info__tags__one">Nuxt.js</p>
+  </div>
+</div>
+
+<p>ずっと <code>Angular</code> を使っていたけど他に勉強するべきだと思ってきた。<br><code>Attribute bind</code> などのテンプレートシンタックスが近い <code>vue.js</code> でのフルスタックフレームワークでなんかやりたい。<br>なので <code>nuxt.js</code> を使う。</p>
+<h2 id="インストール">インストール</h2>
+<p><a href="https://ja.nuxtjs.org/docs/2.x/get-started/installation/">https://ja.nuxtjs.org/docs/2.x/get-started/installation/</a><br><code>create-nuxt-app</code> と 自分でセットアップする方法の2種類がある。<br>今回は <code>create-nuxt-app</code> を使う。</p>
+<pre class=" language-bash"><code class=" language-bash">npx create-nuxt-app karaage-nuxt
+<span class="token comment"># 色々聞かれるので設定をする</span>
+<span class="token punctuation">..</span>.
+
+<span class="token function">npm</span> run dev
+</code></pre>
+<h2 id="ディレクトリ構成">ディレクトリ構成</h2>
+<pre class=" language-bash"><code class=" language-bash">karaage-nuxt
+├── assets          <span class="token comment"># assets</span>
+├── components      <span class="token comment"># コンポーネント</span>
+├── layouts         <span class="token comment"># レイアウト</span>
+├── middleware      <span class="token comment"># ミドルウェア</span>
+├── pages           <span class="token comment"># ページ</span>
+├── plugins         <span class="token comment"># プラグイン</span>
+├── static          <span class="token comment"># 静的ファイル</span>
+├── store           <span class="token comment"># storeファイル (vuex)</span>
+└── nuxt.config.js  <span class="token comment"># 設定ファイル</span>
+</code></pre>
+<h2 id="cliツール">cliツール</h2>
+<pre class=" language-json"><code class=" language-json">...
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+...
+</code></pre>
+<p>起動</p>
+<pre class=" language-none"><code class=" language-none">npm run dev
+</code></pre>
+<p>もしくは</p>
+<pre class=" language-bash"><code class=" language-bash">npx nuxt
+</code></pre>
+<p>ビルド</p>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">npm</span> run build <span class="token comment"># or &gt; npx nuxt build</span>
+</code></pre>
+<p><code>generate</code> との違いは静的ホスティングするときに使用するかどうか。</p>
+<h2 id="pages">pages</h2>
+<p><a href="https://ja.nuxtjs.org/docs/2.x/directory-structure/pages">https://ja.nuxtjs.org/docs/2.x/directory-structure/pages</a>
+基本的にはvueのコンポーネントと同じ考えで良い（はず）。
+nuxt.js側でpageで必要なカスタム関数が追加されている。</p>
+<h3 id="asyncdata">asyncData</h3>
+<p>asyncDataはdataで必要な値を非同期的に取得するためのメソッド。</p>
+<pre class=" language-typescript"><code class=" language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Context <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@nuxt/types'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Vue <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"nuxt-property-decorator"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">ItemParams</span><span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span><span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">PagesItem</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  itemId<span class="token operator">:</span><span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">""</span>
+
+  <span class="token keyword">get</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>itemId<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">async</span> <span class="token function">asyncData</span><span class="token punctuation">(</span>context<span class="token operator">:</span>Context<span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token punctuation">{</span> params <span class="token punctuation">}</span> <span class="token operator">=</span> context<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      itemId<span class="token operator">:</span><span class="token punctuation">(</span>params <span class="token keyword">as</span> ItemParams<span class="token punctuation">)</span><span class="token punctuation">.</span>id
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="fetch">fetch</h3>
+<p><code>fetch</code> は <code>asyncData</code> と違い毎回走るのではなく、<br>サーバーサイドではレンダリング時<br>クライアントサイドでは遷移時
+に走る（SPAのみの場合 <code>asyncData</code> とあんまり変わらないのでは…）</p>
+<h3 id="head">head</h3>
+<p>単純に <code>head</code> に挿入したい <code>meta</code> などを記述する。
+<a href="https://ja.nuxtjs.org/docs/2.x/features/meta-tags-seo">https://ja.nuxtjs.org/docs/2.x/features/meta-tags-seo</a></p>
+<h3 id="プロパティ">プロパティ</h3>
+<h4 id="layout">layout</h4>
+<p>使用するlayoutの設定</p>
+<h4 id="loading">loading</h4>
+<p><a href="https://ja.nuxtjs.org/docs/2.x/directory-structure/pages#loading-%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">https://ja.nuxtjs.org/docs/2.x/directory-structure/pages#loading-%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3</a></p>
+<h4 id="transition">transition</h4>
+<p>ページ遷移時のアニメーションの設定</p>
+<h4 id="scrolltotop">scrollToTop</h4>
+<p>ページの一番上にスクロールさせるか</p>
+<h4 id="watchquery">watchQuery</h4>
+<p>watchしたいQueryPramsを設定する</p>
+<h4 id="middleware">middleware</h4>
+<p>使うmiddlewareを設定する</p>
+<h2 id="要調査">要調査</h2>
+<ul>
+<li><code>@Angular/cli</code> のような <code>ng g module hoge</code> みたいなのがない<ul>
+<li>エディター側のプラグインで対応 <a href="https://qiita.com/mrmr/items/f6927eb2fe5aa13a2f90">link</a></li>
+<li><a href="https://sushi.karaage.tokyo/article/2021-04-28_2">https://sushi.karaage.tokyo/article/2021-04-28_2</a></li>
+</ul>
+</li>
+</ul>
+</markdown></div></item-article></div></card-origin></div></app-article><!----></div><aside _ngcontent-dqi-c12="" class="root-content-side"></aside></div></main></root-content></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.e23ce7490b563c7b399c.js" defer=""></script><script src="polyfills.fd39c6f4e33f73743061.js" defer=""></script><script src="scripts.376f3b80765ffff2ab90.js" defer=""></script><script src="vendor.8425e307a241ba210bb7.js" defer=""></script><script src="main.e2da624138b91747b1b3.js" defer=""></script>
+
+</body></html>

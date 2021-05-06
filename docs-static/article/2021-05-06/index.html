@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="ja"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title> Angular の SSG, scullyを追加、運用する。 | sushi karaage</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.b007dd4b1a6309137c1b.css"><style></style><style>.root-content[_ngcontent-ynu-c12]{min-height:calc(100vh);background-color:var(--color-Background);background-image:url(/assets/background/bg.svg);background-size:72px 72px}.root-content-header[_ngcontent-ynu-c12]{width:100vw;height:var(--size-header);position:fixed;top:0;left:0}.root-content-side[_ngcontent-ynu-c12]{margin:var(--size-itemDistanceMargin)}@media (min-width:720px){.root-content-side[_ngcontent-ynu-c12]{width:var(--size-sideItemSize)}}@media (max-width:1296px){.root-content-side[_ngcontent-ynu-c12]{width:var(--size-conteinerSize);margin-bottom:0}}@media (max-width:720px){.root-content-side[_ngcontent-ynu-c12]{width:auto}}.root-content-side[_ngcontent-ynu-c12]:empty{height:0}.root-content-main[_ngcontent-ynu-c12]{padding-top:var(--size-header)}@media (min-width:720px){.root-content-main[_ngcontent-ynu-c12]{display:flex;justify-content:center}}@media (max-width:1296px){.root-content-main[_ngcontent-ynu-c12]{flex-direction:column;align-items:center}}.root-content-main-inner[_ngcontent-ynu-c12]{margin-top:var(--size-itemDistanceMargin);margin-bottom:var(--size-itemDistanceMargin)}@media (max-width:720px){.root-content-main-inner[_ngcontent-ynu-c12]{margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}@media (min-width:720px){.root-content-main-inner[_ngcontent-ynu-c12]{width:var(--size-conteinerSize)}}.root-content-main-inner-breadcrumb[_ngcontent-ynu-c12]{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.header[_ngcontent-ynu-c7]{width:100%;height:100%;background-color:var(--color-Highlight);box-shadow:0 3px 6px rgba(0,0,0,.16)}@media (min-width:720px){.header[_ngcontent-ynu-c7]{display:flex;align-items:center;justify-content:center}}.header__inner[_ngcontent-ynu-c7]{height:100%;display:flex;align-items:center;position:relative}@media (min-width:720px){.header__inner[_ngcontent-ynu-c7]{width:var(--size-maxPcWidthSize)}}@media (max-width:1296px){.header__inner[_ngcontent-ynu-c7]{width:var(--size-conteinerSize)}}@media (max-width:720px){.header__inner[_ngcontent-ynu-c7]{width:auto;margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}.header__inner__a[_ngcontent-ynu-c7]{font-size:24px;color:var(--color-Paragraph)}.header__inner__hum[_ngcontent-ynu-c7]{margin-left:auto;width:24px;height:20px;-webkit-mask-image:url(/assets/icons/hum.svg);mask-image:url(/assets/icons/hum.svg);background-color:var(--color-Paragraph)}.hum-item[_ngcontent-ynu-c7]{width:var(--size-sideItemSize);display:none;position:absolute;top:calc(var(--size-header) + 12px);right:0;overflow:hidden;border-radius:var(--size-cardBorder);box-shadow:0 3px 6px rgba(0,0,0,.16)}.hum-item[is-view=true][_ngcontent-ynu-c7]{display:block}.hum-item__one[_ngcontent-ynu-c7]{display:block;padding:12px;color:var(--color-Headline)}.hum-item__one[_ngcontent-ynu-c7]:not(:last-child){border-bottom:1px solid var(--color-Paragraph)}</style><style>.image[_ngcontent-ynu-c10]{display:flex;justify-content:center}.image__img[_ngcontent-ynu-c10]{width:64px;height:64px;border-radius:32px;object-fit:contain}.title[_ngcontent-ynu-c10]{color:var(--color-Paragraph);font-size:16px}.link[_ngcontent-ynu-c10]{display:flex;flex-direction:column}.link[_ngcontent-ynu-c10]   a[_ngcontent-ynu-c10]{color:var(--color-Highlight);font-size:16px}</style><style>.card-origin[_ngcontent-ynu-c6]{padding:var(--size-itemInnerPadding);background-color:var(--color-Main);border:3px solid var(--color-Paragraph);border-radius:var(--size-cardBorder)}.card-origin[no-padding=true][_ngcontent-ynu-c6]{padding:0}</style><style>.list list-child:not(:first-child) .one{margin-top:var(--size-itemDistanceMargin)}.list list-child:not(:last-child) .one{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.breadcrumb[_ngcontent-ynu-c11]{list-style:none;display:flex;flex-wrap:nowrap;overflow-x:scroll}.breadcrumb[_ngcontent-ynu-c11]::-webkit-scrollbar{display:none}.breadcrumb__item[_ngcontent-ynu-c11]{margin-left:4px;white-space:nowrap}.breadcrumb__item[_ngcontent-ynu-c11]   a[_ngcontent-ynu-c11]{color:var(--color-Highlight);font-size:16px}.breadcrumb__item[_ngcontent-ynu-c11]:not(:last-of-type):after{content:" > ";margin-right:4px}</style><script charset="utf-8" src="common.557bfe2abbe6d33e6388.js"></script><script charset="utf-8" src="7.456eea205d4e4b7f3cf3.js"></script><script charset="utf-8" src="2.029f6ba71af8a9abc1fe.js"></script><style>@charset "UTF-8";.info{display:flex}.info__date{color:var(--color-Stroke);font-size:14px;margin-right:4px}.info__date:before{content:"📅";margin-right:4px}.info__tags{display:flex}.info__tags__one{margin-right:4px;padding-left:4px;padding-right:4px;color:var(--color-Stroke);font-size:14px;border:1px solid var(--color-Headline);border-radius:8px}</style><link rel="canonical" href="http://localhost:1864/article/2021-05-06"><meta name="keywords" content="blog, Angular"><meta name="description" content="# Angular の SSG, scullyを追加、運用する。
+
+## 既存のAngular プロジェクトに追加する
+```bash
+ng add @scullyio/init
+```
+
+いくつかのファイル、フォルダ、package.jsonの更新がされる
+
+```bash
+...
+├── scully
+│&nbsp;&nbsp; ├── plugins
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── plugin.ts
+│&nbsp;&nbsp; └── tsconfig.json
+├── scully.karaage-ng-site.config.ts
+...
+```
+
+
+```JSON
+  ...
+  &quot;scripts&quot;: {
+    ...
++ "><meta name="og:site_name" content=" Angular の SSG, scullyを追加、運用する。 | sushi karaage"><meta name="og:description" content="# Angular の SSG, scullyを追加、運用する。
+
+## 既存のAngular プロジェクトに追加する
+```bash
+ng add @scullyio/init
+```
+
+いくつかのファイル、フォルダ、package.jsonの更新がされる
+
+```bash
+...
+├── scully
+│&nbsp;&nbsp; ├── plugins
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── plugin.ts
+│&nbsp;&nbsp; └── tsconfig.json
+├── scully.karaage-ng-site.config.ts
+...
+```
+
+
+```JSON
+  ...
+  &quot;scripts&quot;: {
+    ...
++ "><meta name="og:title" content=" Angular の SSG, scullyを追加、運用する。 | sushi karaage"><meta name="og:url" content="https://sushi.karaage.tokyo/#/article/2021-05-06"><meta name="og:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="twitter:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="og:type" content="website"><meta name="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@sushi_karaage"><script>window['ScullyIO']='generated';</script></head>
+
+  <body scully-version="1.1.1">
+    <app-root _nghost-ynu-c13="" ng-version="11.2.9"><root-content _ngcontent-ynu-c13="" _nghost-ynu-c12=""><main _ngcontent-ynu-c12="" class="root-content"><header _ngcontent-ynu-c12="" class="root-content-header"><root-header _ngcontent-ynu-c12="" _nghost-ynu-c7=""><div _ngcontent-ynu-c7="" class="header"><div _ngcontent-ynu-c7="" class="header__inner"><a _ngcontent-ynu-c7="" routerlink="/" class="header__inner__a" href="/"> Sushi karaage </a><div _ngcontent-ynu-c7="" class="header__inner__hum"></div><div _ngcontent-ynu-c7="" class="hum-item" is-view="false"><card-origin _ngcontent-ynu-c7="" _nghost-ynu-c6=""><div _ngcontent-ynu-c6="" class="card-origin" no-padding="true"><a _ngcontent-ynu-c7="" routerlink="/feature/profile" class="hum-item__one" href="/feature/profile"> 自己紹介 </a><a _ngcontent-ynu-c7="" routerlink="/feature/site" class="hum-item__one" href="/feature/site"> このサイトについて </a><a _ngcontent-ynu-c7="" routerlink="/feature/feature" class="hum-item__one" href="/feature/feature"> 開発ログ </a></div></card-origin></div></div></div></root-header></header><div _ngcontent-ynu-c12="" class="root-content-main"><aside _ngcontent-ynu-c12="" class="root-content-side"><root-side _ngcontent-ynu-c12="" _nghost-ynu-c10=""><card-origin _ngcontent-ynu-c10="" _nghost-ynu-c6=""><div _ngcontent-ynu-c6="" class="card-origin" no-padding="false"><list-parent _ngcontent-ynu-c10=""><div class="list"><list-child _ngcontent-ynu-c10=""><div class="one"><div _ngcontent-ynu-c10="" class="image"><img _ngcontent-ynu-c10="" src="assets/img/no-img.png" alt="jinya kitazumeの画像" class="image__img"></div></div></list-child><list-child _ngcontent-ynu-c10=""><div class="one"><p _ngcontent-ynu-c10="" class="title"> sushi karaage </p><div _ngcontent-ynu-c10="" class="link"><a _ngcontent-ynu-c10="" href="https://github.com/eeenbnb" target="_blank" rel="noreferrer"> github </a><a _ngcontent-ynu-c10="" href="https://twitter.com/sushi_karaage" target="_blank" rel="noreferrer"> twitter </a></div></div></list-child></div></list-parent></div></card-origin></root-side></aside><div _ngcontent-ynu-c12="" class="root-content-main-inner"><div _ngcontent-ynu-c12="" class="root-content-main-inner-breadcrumb"><item-breadcrumb _ngcontent-ynu-c12="" _nghost-ynu-c11=""><card-origin _ngcontent-ynu-c11="" _nghost-ynu-c6=""><div _ngcontent-ynu-c6="" class="card-origin" no-padding="false"><ol _ngcontent-ynu-c11="" itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li _ngcontent-ynu-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-ynu-c11="" itemprop="item" href="/"><span _ngcontent-ynu-c11="" itemprop="name">top</span></a><meta _ngcontent-ynu-c11="" itemprop="position" content="0"></li><!----><li _ngcontent-ynu-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-ynu-c11="" itemprop="item" href="/article/2021-05-06"><span _ngcontent-ynu-c11="" itemprop="name"> Angular の SSG, scullyを追加、運用する。</span></a><meta _ngcontent-ynu-c11="" itemprop="position" content="1"></li><!----><!----></ol></div></card-origin><!----></item-breadcrumb></div><!----><router-outlet _ngcontent-ynu-c13=""></router-outlet><app-article _nghost-ynu-c19=""><div _ngcontent-ynu-c19="" class="article"><card-origin _ngcontent-ynu-c19="" _nghost-ynu-c6=""><div _ngcontent-ynu-c6="" class="card-origin" no-padding="false"><item-article _ngcontent-ynu-c19=""><div class="item-article markdown-body"><markdown><h1 id="angular-の-ssg-scullyを追加、運用する。">Angular の SSG, scullyを追加、運用する。</h1>
+<h2 id="既存のangular-プロジェクトに追加する">既存のAngular プロジェクトに追加する</h2>
+<pre class=" language-bash"><code class=" language-bash">ng <span class="token function">add</span> @scullyio/init
+</code></pre>
+<p>いくつかのファイル、フォルダ、package.jsonの更新がされる</p>
+<pre class=" language-bash"><code class=" language-bash"><span class="token punctuation">..</span>.
+├── scully
+│   ├── plugins
+│   │   └── plugin.ts
+│   └── tsconfig.json
+├── scully.karaage-ng-site.config.ts
+<span class="token punctuation">..</span>.
+</code></pre>
+<pre class=" language-json"><code class=" language-json">  ...
+  "scripts": {
+    ...
++    "scully": "npx scully --",
++    "scully:serve": "npx scully serve --"
+  },
+  "dependencies": {
++    "@scullyio/init": "^1.1.4",
++    "@scullyio/ng-lib": "^1.0.0",
++    "@scullyio/scully": "^1.0.0",
+  },
+  ...
+</code></pre>
+<h2 id="とりあえず実行">とりあえず実行</h2>
+<pre class=" language-bash"><code class=" language-bash">ng build --prod
+<span class="token function">npm</span> run scully
+</code></pre>
+<p>ビルドされた成果物からレンダリングを行い静的ファイルを生成するっぽい。ルーティングの設定などしていないのでトップのページしかレンダリングされたHTMLがないっぽい。</p>
+<h2 id="routingを追加">routingを追加</h2>
+<p><strong>netlifty だと以下の設定いらない</strong></p>
+<p><code>scully.&lt;project-name&gt;.config.ts</code> を編集する。<br><code>extraRoutes</code> の項目で追加したページはプリレンダリングされる。
+また今回は動的な値じゃないのでゴリゴリして適当にやったけどAPI等から取得してレンダリングする方法もある。</p>
+<p><a href="https://scully.io/docs/concepts/unhandled-routes/">Unhandled routes</a><br><a href="https://scully.io/docs/concepts/handled-routes/">Handled routes</a></p>
+<pre class=" language-typescript"><code class=" language-typescript">
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> fs <span class="token keyword">from</span> <span class="token string">'fs'</span>
+<span class="token keyword">let</span> items<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">"path/all.json"</span><span class="token punctuation">,</span><span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> config<span class="token operator">:</span> ScullyConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  extraRoutes<span class="token operator">:</span> items<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token operator">=&gt;</span> <span class="token string">"/article/"</span> <span class="token operator">+</span> v<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</markdown></div></item-article></div></card-origin></div></app-article><!----></div><aside _ngcontent-ynu-c12="" class="root-content-side"></aside></div></main></root-content></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.e23ce7490b563c7b399c.js" defer=""></script><script src="polyfills.fd39c6f4e33f73743061.js" defer=""></script><script src="scripts.376f3b80765ffff2ab90.js" defer=""></script><script src="vendor.8425e307a241ba210bb7.js" defer=""></script><script src="main.e2da624138b91747b1b3.js" defer=""></script>
+
+</body></html>

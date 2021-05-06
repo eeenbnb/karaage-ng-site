@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="ja"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title> Angularで自動でcanonicalタグを挿入する | sushi karaage</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.b007dd4b1a6309137c1b.css"><style></style><style>.root-content[_ngcontent-wfr-c12]{min-height:calc(100vh);background-color:var(--color-Background);background-image:url(/assets/background/bg.svg);background-size:72px 72px}.root-content-header[_ngcontent-wfr-c12]{width:100vw;height:var(--size-header);position:fixed;top:0;left:0}.root-content-side[_ngcontent-wfr-c12]{margin:var(--size-itemDistanceMargin)}@media (min-width:720px){.root-content-side[_ngcontent-wfr-c12]{width:var(--size-sideItemSize)}}@media (max-width:1296px){.root-content-side[_ngcontent-wfr-c12]{width:var(--size-conteinerSize);margin-bottom:0}}@media (max-width:720px){.root-content-side[_ngcontent-wfr-c12]{width:auto}}.root-content-side[_ngcontent-wfr-c12]:empty{height:0}.root-content-main[_ngcontent-wfr-c12]{padding-top:var(--size-header)}@media (min-width:720px){.root-content-main[_ngcontent-wfr-c12]{display:flex;justify-content:center}}@media (max-width:1296px){.root-content-main[_ngcontent-wfr-c12]{flex-direction:column;align-items:center}}.root-content-main-inner[_ngcontent-wfr-c12]{margin-top:var(--size-itemDistanceMargin);margin-bottom:var(--size-itemDistanceMargin)}@media (max-width:720px){.root-content-main-inner[_ngcontent-wfr-c12]{margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}@media (min-width:720px){.root-content-main-inner[_ngcontent-wfr-c12]{width:var(--size-conteinerSize)}}.root-content-main-inner-breadcrumb[_ngcontent-wfr-c12]{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.header[_ngcontent-wfr-c7]{width:100%;height:100%;background-color:var(--color-Highlight);box-shadow:0 3px 6px rgba(0,0,0,.16)}@media (min-width:720px){.header[_ngcontent-wfr-c7]{display:flex;align-items:center;justify-content:center}}.header__inner[_ngcontent-wfr-c7]{height:100%;display:flex;align-items:center;position:relative}@media (min-width:720px){.header__inner[_ngcontent-wfr-c7]{width:var(--size-maxPcWidthSize)}}@media (max-width:1296px){.header__inner[_ngcontent-wfr-c7]{width:var(--size-conteinerSize)}}@media (max-width:720px){.header__inner[_ngcontent-wfr-c7]{width:auto;margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}.header__inner__a[_ngcontent-wfr-c7]{font-size:24px;color:var(--color-Paragraph)}.header__inner__hum[_ngcontent-wfr-c7]{margin-left:auto;width:24px;height:20px;-webkit-mask-image:url(/assets/icons/hum.svg);mask-image:url(/assets/icons/hum.svg);background-color:var(--color-Paragraph)}.hum-item[_ngcontent-wfr-c7]{width:var(--size-sideItemSize);display:none;position:absolute;top:calc(var(--size-header) + 12px);right:0;overflow:hidden;border-radius:var(--size-cardBorder);box-shadow:0 3px 6px rgba(0,0,0,.16)}.hum-item[is-view=true][_ngcontent-wfr-c7]{display:block}.hum-item__one[_ngcontent-wfr-c7]{display:block;padding:12px;color:var(--color-Headline)}.hum-item__one[_ngcontent-wfr-c7]:not(:last-child){border-bottom:1px solid var(--color-Paragraph)}</style><style>.image[_ngcontent-wfr-c10]{display:flex;justify-content:center}.image__img[_ngcontent-wfr-c10]{width:64px;height:64px;border-radius:32px;object-fit:contain}.title[_ngcontent-wfr-c10]{color:var(--color-Paragraph);font-size:16px}.link[_ngcontent-wfr-c10]{display:flex;flex-direction:column}.link[_ngcontent-wfr-c10]   a[_ngcontent-wfr-c10]{color:var(--color-Highlight);font-size:16px}</style><style>.card-origin[_ngcontent-wfr-c6]{padding:var(--size-itemInnerPadding);background-color:var(--color-Main);border:3px solid var(--color-Paragraph);border-radius:var(--size-cardBorder)}.card-origin[no-padding=true][_ngcontent-wfr-c6]{padding:0}</style><style>.list list-child:not(:first-child) .one{margin-top:var(--size-itemDistanceMargin)}.list list-child:not(:last-child) .one{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.breadcrumb[_ngcontent-wfr-c11]{list-style:none;display:flex;flex-wrap:nowrap;overflow-x:scroll}.breadcrumb[_ngcontent-wfr-c11]::-webkit-scrollbar{display:none}.breadcrumb__item[_ngcontent-wfr-c11]{margin-left:4px;white-space:nowrap}.breadcrumb__item[_ngcontent-wfr-c11]   a[_ngcontent-wfr-c11]{color:var(--color-Highlight);font-size:16px}.breadcrumb__item[_ngcontent-wfr-c11]:not(:last-of-type):after{content:" > ";margin-right:4px}</style><script charset="utf-8" src="common.557bfe2abbe6d33e6388.js"></script><script charset="utf-8" src="7.456eea205d4e4b7f3cf3.js"></script><script charset="utf-8" src="2.029f6ba71af8a9abc1fe.js"></script><style>@charset "UTF-8";.info{display:flex}.info__date{color:var(--color-Stroke);font-size:14px;margin-right:4px}.info__date:before{content:"📅";margin-right:4px}.info__tags{display:flex}.info__tags__one{margin-right:4px;padding-left:4px;padding-right:4px;color:var(--color-Stroke);font-size:14px;border:1px solid var(--color-Headline);border-radius:8px}</style><link rel="canonical" href="http://localhost:1864/article/2021-04-20_1"><meta name="keywords" content="blog, Angular"><meta name="description" content="# Angularで自動でcanonicalタグを挿入する
+<div class=&quot;info&quot;>
+  <p class=&quot;info__date&quot;>
+    2021/04/20
+  </p>
+  <div class=&quot;info__tags&quot;>
+    <p class=&quot;info__tags__one&quot;>Angular</p>
+  </div>
+</div>
+
+## canonicalとは
+> canonicalとは、正式なURLを検索エンジン側に伝えるURLの正規化を目的としたものです。link要素の中で使われる属性値で、head要素の中で使います。
+> anonicalを設定すると、複数"><meta name="og:site_name" content=" Angularで自動でcanonicalタグを挿入する | sushi karaage"><meta name="og:description" content="# Angularで自動でcanonicalタグを挿入する
+<div class=&quot;info&quot;>
+  <p class=&quot;info__date&quot;>
+    2021/04/20
+  </p>
+  <div class=&quot;info__tags&quot;>
+    <p class=&quot;info__tags__one&quot;>Angular</p>
+  </div>
+</div>
+
+## canonicalとは
+> canonicalとは、正式なURLを検索エンジン側に伝えるURLの正規化を目的としたものです。link要素の中で使われる属性値で、head要素の中で使います。
+> anonicalを設定すると、複数"><meta name="og:title" content=" Angularで自動でcanonicalタグを挿入する | sushi karaage"><meta name="og:url" content="https://sushi.karaage.tokyo/#/article/2021-04-20_1"><meta name="og:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="twitter:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="og:type" content="website"><meta name="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@sushi_karaage"><script>window['ScullyIO']='generated';</script></head>
+
+  <body scully-version="1.1.1">
+    <app-root _nghost-wfr-c13="" ng-version="11.2.9"><root-content _ngcontent-wfr-c13="" _nghost-wfr-c12=""><main _ngcontent-wfr-c12="" class="root-content"><header _ngcontent-wfr-c12="" class="root-content-header"><root-header _ngcontent-wfr-c12="" _nghost-wfr-c7=""><div _ngcontent-wfr-c7="" class="header"><div _ngcontent-wfr-c7="" class="header__inner"><a _ngcontent-wfr-c7="" routerlink="/" class="header__inner__a" href="/"> Sushi karaage </a><div _ngcontent-wfr-c7="" class="header__inner__hum"></div><div _ngcontent-wfr-c7="" class="hum-item" is-view="false"><card-origin _ngcontent-wfr-c7="" _nghost-wfr-c6=""><div _ngcontent-wfr-c6="" class="card-origin" no-padding="true"><a _ngcontent-wfr-c7="" routerlink="/feature/profile" class="hum-item__one" href="/feature/profile"> 自己紹介 </a><a _ngcontent-wfr-c7="" routerlink="/feature/site" class="hum-item__one" href="/feature/site"> このサイトについて </a><a _ngcontent-wfr-c7="" routerlink="/feature/feature" class="hum-item__one" href="/feature/feature"> 開発ログ </a></div></card-origin></div></div></div></root-header></header><div _ngcontent-wfr-c12="" class="root-content-main"><aside _ngcontent-wfr-c12="" class="root-content-side"><root-side _ngcontent-wfr-c12="" _nghost-wfr-c10=""><card-origin _ngcontent-wfr-c10="" _nghost-wfr-c6=""><div _ngcontent-wfr-c6="" class="card-origin" no-padding="false"><list-parent _ngcontent-wfr-c10=""><div class="list"><list-child _ngcontent-wfr-c10=""><div class="one"><div _ngcontent-wfr-c10="" class="image"><img _ngcontent-wfr-c10="" src="assets/img/no-img.png" alt="jinya kitazumeの画像" class="image__img"></div></div></list-child><list-child _ngcontent-wfr-c10=""><div class="one"><p _ngcontent-wfr-c10="" class="title"> sushi karaage </p><div _ngcontent-wfr-c10="" class="link"><a _ngcontent-wfr-c10="" href="https://github.com/eeenbnb" target="_blank" rel="noreferrer"> github </a><a _ngcontent-wfr-c10="" href="https://twitter.com/sushi_karaage" target="_blank" rel="noreferrer"> twitter </a></div></div></list-child></div></list-parent></div></card-origin></root-side></aside><div _ngcontent-wfr-c12="" class="root-content-main-inner"><div _ngcontent-wfr-c12="" class="root-content-main-inner-breadcrumb"><item-breadcrumb _ngcontent-wfr-c12="" _nghost-wfr-c11=""><card-origin _ngcontent-wfr-c11="" _nghost-wfr-c6=""><div _ngcontent-wfr-c6="" class="card-origin" no-padding="false"><ol _ngcontent-wfr-c11="" itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li _ngcontent-wfr-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-wfr-c11="" itemprop="item" href="/"><span _ngcontent-wfr-c11="" itemprop="name">top</span></a><meta _ngcontent-wfr-c11="" itemprop="position" content="0"></li><!----><li _ngcontent-wfr-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-wfr-c11="" itemprop="item" href="/article/2021-04-20_1"><span _ngcontent-wfr-c11="" itemprop="name"> Angularで自動でcanonicalタグを挿入する</span></a><meta _ngcontent-wfr-c11="" itemprop="position" content="1"></li><!----><!----></ol></div></card-origin><!----></item-breadcrumb></div><!----><router-outlet _ngcontent-wfr-c13=""></router-outlet><app-article _nghost-wfr-c19=""><div _ngcontent-wfr-c19="" class="article"><card-origin _ngcontent-wfr-c19="" _nghost-wfr-c6=""><div _ngcontent-wfr-c6="" class="card-origin" no-padding="false"><item-article _ngcontent-wfr-c19=""><div class="item-article markdown-body"><markdown><h1 id="angularで自動でcanonicalタグを挿入する">Angularで自動でcanonicalタグを挿入する</h1>
+<div class="info">
+  <p class="info__date">
+    2021/04/20
+  </p>
+  <div class="info__tags">
+    <p class="info__tags__one">Angular</p>
+  </div>
+</div>
+
+<h2 id="canonicalとは">canonicalとは</h2>
+<blockquote>
+<p>canonicalとは、正式なURLを検索エンジン側に伝えるURLの正規化を目的としたものです。link要素の中で使われる属性値で、head要素の中で使います。
+anonicalを設定すると、複数の重複ページが存在している場合に、検索エンジンに優先させるべきページを伝えることでそれ以外のページは重複ページであることを伝える事ができます。</p>
+</blockquote>
+<p><a href="https://ferret-plus.com/1809">https://ferret-plus.com/1809</a> から引用<br>つまり重複してないコンテンツ（ページ）に対して設定する項目。</p>
+<h2 id="タグを生成してheaderに突っ込むservice">タグを生成してHeaderに突っ込むservice</h2>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable<span class="token punctuation">,</span> Inject <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">DOCUMENT</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/common'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  providedIn<span class="token operator">:</span> <span class="token string">'root'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CanonicalService</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>
+    <span class="token parameter">@<span class="token function">Inject</span><span class="token punctuation">(</span><span class="token constant">DOCUMENT</span><span class="token punctuation">)</span> <span class="token keyword">private</span> dom<span class="token operator">:</span>any<span class="token punctuation">,</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+  <span class="token function">setCanonicalURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">deleteCanonicalURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> link<span class="token operator">:</span> HTMLLinkElement <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dom<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'link'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    link<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'rel'</span><span class="token punctuation">,</span> <span class="token string">'canonical'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    link<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dom<span class="token punctuation">.</span><span class="token constant">URL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>dom<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">deleteCanonicalURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> doms <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>dom<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">"[rel='canonical']"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    doms<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">elm<span class="token operator">:</span>any</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>dom<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>elm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="使用例">使用例</h2>
+<pre class=" language-javascript"><code class=" language-javascript">@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">HogeComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>
+    <span class="token parameter"><span class="token keyword">private</span> router<span class="token operator">:</span>Router<span class="token punctuation">,</span>
+    <span class="token keyword">private</span> canonicalService<span class="token operator">:</span>CanonicalService</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span> <span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">event</span> <span class="token operator">=&gt;</span> event <span class="token keyword">instanceof</span> <span class="token class-name">NavigationEnd</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>
+      <span class="token punctuation">(</span><span class="token parameter">params<span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>canonicalService<span class="token punctuation">.</span><span class="token function">setCanonicalURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</markdown></div></item-article></div></card-origin></div></app-article><!----></div><aside _ngcontent-wfr-c12="" class="root-content-side"></aside></div></main></root-content></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.e23ce7490b563c7b399c.js" defer=""></script><script src="polyfills.fd39c6f4e33f73743061.js" defer=""></script><script src="scripts.376f3b80765ffff2ab90.js" defer=""></script><script src="vendor.8425e307a241ba210bb7.js" defer=""></script><script src="main.e2da624138b91747b1b3.js" defer=""></script>
+
+</body></html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="ja"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title> パンくずリストの追加と構造化データの生成 | sushi karaage</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.b007dd4b1a6309137c1b.css"><style></style><style>.root-content[_ngcontent-kbh-c12]{min-height:calc(100vh);background-color:var(--color-Background);background-image:url(/assets/background/bg.svg);background-size:72px 72px}.root-content-header[_ngcontent-kbh-c12]{width:100vw;height:var(--size-header);position:fixed;top:0;left:0}.root-content-side[_ngcontent-kbh-c12]{margin:var(--size-itemDistanceMargin)}@media (min-width:720px){.root-content-side[_ngcontent-kbh-c12]{width:var(--size-sideItemSize)}}@media (max-width:1296px){.root-content-side[_ngcontent-kbh-c12]{width:var(--size-conteinerSize);margin-bottom:0}}@media (max-width:720px){.root-content-side[_ngcontent-kbh-c12]{width:auto}}.root-content-side[_ngcontent-kbh-c12]:empty{height:0}.root-content-main[_ngcontent-kbh-c12]{padding-top:var(--size-header)}@media (min-width:720px){.root-content-main[_ngcontent-kbh-c12]{display:flex;justify-content:center}}@media (max-width:1296px){.root-content-main[_ngcontent-kbh-c12]{flex-direction:column;align-items:center}}.root-content-main-inner[_ngcontent-kbh-c12]{margin-top:var(--size-itemDistanceMargin);margin-bottom:var(--size-itemDistanceMargin)}@media (max-width:720px){.root-content-main-inner[_ngcontent-kbh-c12]{margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}@media (min-width:720px){.root-content-main-inner[_ngcontent-kbh-c12]{width:var(--size-conteinerSize)}}.root-content-main-inner-breadcrumb[_ngcontent-kbh-c12]{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.header[_ngcontent-kbh-c7]{width:100%;height:100%;background-color:var(--color-Highlight);box-shadow:0 3px 6px rgba(0,0,0,.16)}@media (min-width:720px){.header[_ngcontent-kbh-c7]{display:flex;align-items:center;justify-content:center}}.header__inner[_ngcontent-kbh-c7]{height:100%;display:flex;align-items:center;position:relative}@media (min-width:720px){.header__inner[_ngcontent-kbh-c7]{width:var(--size-maxPcWidthSize)}}@media (max-width:1296px){.header__inner[_ngcontent-kbh-c7]{width:var(--size-conteinerSize)}}@media (max-width:720px){.header__inner[_ngcontent-kbh-c7]{width:auto;margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}.header__inner__a[_ngcontent-kbh-c7]{font-size:24px;color:var(--color-Paragraph)}.header__inner__hum[_ngcontent-kbh-c7]{margin-left:auto;width:24px;height:20px;-webkit-mask-image:url(/assets/icons/hum.svg);mask-image:url(/assets/icons/hum.svg);background-color:var(--color-Paragraph)}.hum-item[_ngcontent-kbh-c7]{width:var(--size-sideItemSize);display:none;position:absolute;top:calc(var(--size-header) + 12px);right:0;overflow:hidden;border-radius:var(--size-cardBorder);box-shadow:0 3px 6px rgba(0,0,0,.16)}.hum-item[is-view=true][_ngcontent-kbh-c7]{display:block}.hum-item__one[_ngcontent-kbh-c7]{display:block;padding:12px;color:var(--color-Headline)}.hum-item__one[_ngcontent-kbh-c7]:not(:last-child){border-bottom:1px solid var(--color-Paragraph)}</style><style>.image[_ngcontent-kbh-c10]{display:flex;justify-content:center}.image__img[_ngcontent-kbh-c10]{width:64px;height:64px;border-radius:32px;object-fit:contain}.title[_ngcontent-kbh-c10]{color:var(--color-Paragraph);font-size:16px}.link[_ngcontent-kbh-c10]{display:flex;flex-direction:column}.link[_ngcontent-kbh-c10]   a[_ngcontent-kbh-c10]{color:var(--color-Highlight);font-size:16px}</style><style>.card-origin[_ngcontent-kbh-c6]{padding:var(--size-itemInnerPadding);background-color:var(--color-Main);border:3px solid var(--color-Paragraph);border-radius:var(--size-cardBorder)}.card-origin[no-padding=true][_ngcontent-kbh-c6]{padding:0}</style><style>.list list-child:not(:first-child) .one{margin-top:var(--size-itemDistanceMargin)}.list list-child:not(:last-child) .one{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.breadcrumb[_ngcontent-kbh-c11]{list-style:none;display:flex;flex-wrap:nowrap;overflow-x:scroll}.breadcrumb[_ngcontent-kbh-c11]::-webkit-scrollbar{display:none}.breadcrumb__item[_ngcontent-kbh-c11]{margin-left:4px;white-space:nowrap}.breadcrumb__item[_ngcontent-kbh-c11]   a[_ngcontent-kbh-c11]{color:var(--color-Highlight);font-size:16px}.breadcrumb__item[_ngcontent-kbh-c11]:not(:last-of-type):after{content:" > ";margin-right:4px}</style><script charset="utf-8" src="common.557bfe2abbe6d33e6388.js"></script><script charset="utf-8" src="7.456eea205d4e4b7f3cf3.js"></script><script charset="utf-8" src="2.029f6ba71af8a9abc1fe.js"></script><style>@charset "UTF-8";.info{display:flex}.info__date{color:var(--color-Stroke);font-size:14px;margin-right:4px}.info__date:before{content:"📅";margin-right:4px}.info__tags{display:flex}.info__tags__one{margin-right:4px;padding-left:4px;padding-right:4px;color:var(--color-Stroke);font-size:14px;border:1px solid var(--color-Headline);border-radius:8px}</style><link rel="canonical" href="http://localhost:1864/article/2021-04-19"><meta name="keywords" content="blog, Angular"><meta name="description" content="# パンくずリストの追加と構造化データの生成
+<div class=&quot;info&quot;>
+  <p class=&quot;info__date&quot;>
+    2021/04/19
+  </p>
+  <div class=&quot;info__tags&quot;>
+    <p class=&quot;info__tags__one&quot;>Angular</p>
+  </div>
+</div>
+
+## はじめに
+パンくずリストを作成する。  
+ページヘッダーの下辺りに表示する。  
+
+## パンくずリストとは?
+`ホーム > 記事 > タイトル` みたいなやつ。  
+
+## 構造化データとは？
+google等の検索結果に表示するときになんか"><meta name="og:site_name" content=" パンくずリストの追加と構造化データの生成 | sushi karaage"><meta name="og:description" content="# パンくずリストの追加と構造化データの生成
+<div class=&quot;info&quot;>
+  <p class=&quot;info__date&quot;>
+    2021/04/19
+  </p>
+  <div class=&quot;info__tags&quot;>
+    <p class=&quot;info__tags__one&quot;>Angular</p>
+  </div>
+</div>
+
+## はじめに
+パンくずリストを作成する。  
+ページヘッダーの下辺りに表示する。  
+
+## パンくずリストとは?
+`ホーム > 記事 > タイトル` みたいなやつ。  
+
+## 構造化データとは？
+google等の検索結果に表示するときになんか"><meta name="og:title" content=" パンくずリストの追加と構造化データの生成 | sushi karaage"><meta name="og:url" content="https://sushi.karaage.tokyo/#/article/2021-04-19"><meta name="og:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="twitter:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="og:type" content="website"><meta name="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@sushi_karaage"><script>window['ScullyIO']='generated';</script></head>
+
+  <body scully-version="1.1.1">
+    <app-root _nghost-kbh-c13="" ng-version="11.2.9"><root-content _ngcontent-kbh-c13="" _nghost-kbh-c12=""><main _ngcontent-kbh-c12="" class="root-content"><header _ngcontent-kbh-c12="" class="root-content-header"><root-header _ngcontent-kbh-c12="" _nghost-kbh-c7=""><div _ngcontent-kbh-c7="" class="header"><div _ngcontent-kbh-c7="" class="header__inner"><a _ngcontent-kbh-c7="" routerlink="/" class="header__inner__a" href="/"> Sushi karaage </a><div _ngcontent-kbh-c7="" class="header__inner__hum"></div><div _ngcontent-kbh-c7="" class="hum-item" is-view="false"><card-origin _ngcontent-kbh-c7="" _nghost-kbh-c6=""><div _ngcontent-kbh-c6="" class="card-origin" no-padding="true"><a _ngcontent-kbh-c7="" routerlink="/feature/profile" class="hum-item__one" href="/feature/profile"> 自己紹介 </a><a _ngcontent-kbh-c7="" routerlink="/feature/site" class="hum-item__one" href="/feature/site"> このサイトについて </a><a _ngcontent-kbh-c7="" routerlink="/feature/feature" class="hum-item__one" href="/feature/feature"> 開発ログ </a></div></card-origin></div></div></div></root-header></header><div _ngcontent-kbh-c12="" class="root-content-main"><aside _ngcontent-kbh-c12="" class="root-content-side"><root-side _ngcontent-kbh-c12="" _nghost-kbh-c10=""><card-origin _ngcontent-kbh-c10="" _nghost-kbh-c6=""><div _ngcontent-kbh-c6="" class="card-origin" no-padding="false"><list-parent _ngcontent-kbh-c10=""><div class="list"><list-child _ngcontent-kbh-c10=""><div class="one"><div _ngcontent-kbh-c10="" class="image"><img _ngcontent-kbh-c10="" src="assets/img/no-img.png" alt="jinya kitazumeの画像" class="image__img"></div></div></list-child><list-child _ngcontent-kbh-c10=""><div class="one"><p _ngcontent-kbh-c10="" class="title"> sushi karaage </p><div _ngcontent-kbh-c10="" class="link"><a _ngcontent-kbh-c10="" href="https://github.com/eeenbnb" target="_blank" rel="noreferrer"> github </a><a _ngcontent-kbh-c10="" href="https://twitter.com/sushi_karaage" target="_blank" rel="noreferrer"> twitter </a></div></div></list-child></div></list-parent></div></card-origin></root-side></aside><div _ngcontent-kbh-c12="" class="root-content-main-inner"><div _ngcontent-kbh-c12="" class="root-content-main-inner-breadcrumb"><item-breadcrumb _ngcontent-kbh-c12="" _nghost-kbh-c11=""><card-origin _ngcontent-kbh-c11="" _nghost-kbh-c6=""><div _ngcontent-kbh-c6="" class="card-origin" no-padding="false"><ol _ngcontent-kbh-c11="" itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li _ngcontent-kbh-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-kbh-c11="" itemprop="item" href="/"><span _ngcontent-kbh-c11="" itemprop="name">top</span></a><meta _ngcontent-kbh-c11="" itemprop="position" content="0"></li><!----><li _ngcontent-kbh-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-kbh-c11="" itemprop="item" href="/article/2021-04-19"><span _ngcontent-kbh-c11="" itemprop="name"> パンくずリストの追加と構造化データの生成</span></a><meta _ngcontent-kbh-c11="" itemprop="position" content="1"></li><!----><!----></ol></div></card-origin><!----></item-breadcrumb></div><!----><router-outlet _ngcontent-kbh-c13=""></router-outlet><app-article _nghost-kbh-c19=""><div _ngcontent-kbh-c19="" class="article"><card-origin _ngcontent-kbh-c19="" _nghost-kbh-c6=""><div _ngcontent-kbh-c6="" class="card-origin" no-padding="false"><item-article _ngcontent-kbh-c19=""><div class="item-article markdown-body"><markdown><h1 id="パンくずリストの追加と構造化データの生成">パンくずリストの追加と構造化データの生成</h1>
+<div class="info">
+  <p class="info__date">
+    2021/04/19
+  </p>
+  <div class="info__tags">
+    <p class="info__tags__one">Angular</p>
+  </div>
+</div>
+
+<h2 id="はじめに">はじめに</h2>
+<p>パンくずリストを作成する。<br>ページヘッダーの下辺りに表示する。  </p>
+<h2 id="パンくずリストとは">パンくずリストとは?</h2>
+<p><code>ホーム &gt; 記事 &gt; タイトル</code> みたいなやつ。  </p>
+<h2 id="構造化データとは？">構造化データとは？</h2>
+<p>google等の検索結果に表示するときになんかかっこよく表示してくれるやつ。<br><a href="https://search.google.com/test/rich-results">https://search.google.com/test/rich-results</a><br>このページで確認することができる。  </p>
+<p>実装的な話をすると  </p>
+<ul>
+<li><code>JSON-LD</code><ul>
+<li>headerにデータを挿入する</li>
+</ul>
+</li>
+<li><code>RDFa</code><ul>
+<li>htmlのelementにattributeとして挿入する。</li>
+</ul>
+</li>
+<li><code>microdata</code><ul>
+<li>上記と同様、プロパティネームだけ違う。</li>
+</ul>
+</li>
+</ul>
+<p>まあ詳しくは以下のページに書いてある。<br><a href="https://developers.google.com/search/docs/data-types/breadcrumb?hl=ja">https://developers.google.com/search/docs/data-types/breadcrumb?hl=ja</a></p>
+<p>今回はコンポーネント内に内包させたいので <code>microdata</code> を使用する。</p>
+<h2 id="angularのcomponentに構造化データを挿入">AngularのComponentに構造化データを挿入</h2>
+<p><code>microdata</code> を使用するのでHTML上に生成する。</p>
+<pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breadcrumb<span class="token punctuation">"</span></span> <span class="token attr-name">itemscope</span> <span class="token attr-name">itemtype</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://schema.org/BreadcrumbList<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-container</span> <span class="token attr-name">*ngFor</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>let breadcrumb of breadcrumbs;let i = index<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breadcrumb__item<span class="token punctuation">"</span></span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>itemListElement<span class="token punctuation">"</span></span> <span class="token attr-name">itemscope</span> <span class="token attr-name">itemtype</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://schema.org/ListItem<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">[routerLink]</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breadcrumb.path<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{{breadcrumb.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>position<span class="token punctuation">"</span></span> <span class="token attr-name">[content]</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>i<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-container</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> OnInit<span class="token punctuation">,</span> OnDestroy <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Subscription <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'rxjs'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BreadcrumbService<span class="token punctuation">,</span> Breadcrumbs <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../../../service/breadcrumb/breadcrumb.service'</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token operator">:</span> <span class="token string">'item-breadcrumb'</span><span class="token punctuation">,</span>
+  templateUrl<span class="token operator">:</span> <span class="token string">'./item-breadcrumb.component.html'</span><span class="token punctuation">,</span>
+  styleUrls<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'./item-breadcrumb.component.scss'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ItemBreadcrumbComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span><span class="token punctuation">,</span> OnDestroy <span class="token punctuation">{</span>
+  breadcrumbs<span class="token operator">:</span>Breadcrumbs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  breadcrumbsSubscription<span class="token operator">:</span>Subscription<span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>
+    <span class="token parameter"><span class="token keyword">private</span> breadcrumbService<span class="token operator">:</span>BreadcrumbService</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>breadcrumbsSubscription <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>breadcrumbService<span class="token punctuation">.</span><span class="token function">getBreadcrumbsChageEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>
+      <span class="token punctuation">(</span><span class="token parameter">breadcrumbs<span class="token operator">:</span>Breadcrumbs</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"breadcrumbs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+
+  <span class="token punctuation">}</span>
+
+  <span class="token function">ngOnDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>breadcrumbsSubscription<span class="token punctuation">.</span><span class="token function">unsubscribe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>routerを使用する場合はコンポーネントにデータをservice経由で送信する。</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Subject<span class="token punctuation">,</span> Observable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'rxjs'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Breadcrumb</span><span class="token punctuation">{</span>
+  path<span class="token operator">:</span>string<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  name<span class="token operator">:</span>string<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> type Breadcrumbs <span class="token operator">=</span> Breadcrumb<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  providedIn<span class="token operator">:</span> <span class="token string">'root'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">BreadcrumbService</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> setItem<span class="token operator">:</span>Breadcrumbs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">private</span> sharedDataSource <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Subject</span><span class="token operator">&lt;</span>Breadcrumbs<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">private</span> sharedDataSourceObservable <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sharedDataSource<span class="token punctuation">.</span><span class="token function">asObservable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+  <span class="token function">getBreadcrumbsChageEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>Observable<span class="token operator">&lt;</span>Breadcrumbs<span class="token operator">&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sharedDataSourceObservable<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setBreadcrumbs</span><span class="token punctuation">(</span>breadcrumbs<span class="token operator">:</span>Breadcrumbs<span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>setItem <span class="token operator">=</span> breadcrumbs<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>sharedDataSource<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span>breadcrumbs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">getSetBreadcrumbs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>setItem<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>使用例</p>
+<pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item-breadcrumb</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item-breadcrumb</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<pre class=" language-javascript"><code class=" language-javascript">@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">HogeComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>
+    <span class="token parameter"><span class="token keyword">private</span> breadcrumbService<span class="token operator">:</span>BreadcrumbService</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>breadcrumbService<span class="token punctuation">.</span><span class="token function">setBreadcrumbs</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> path<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"/"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> name<span class="token operator">:</span><span class="token string">"top"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> path<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"/"</span><span class="token punctuation">,</span><span class="token string">"hoge"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> name<span class="token operator">:</span><span class="token string">"hoge"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> path<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"/"</span><span class="token punctuation">,</span><span class="token string">"hoge"</span><span class="token punctuation">,</span><span class="token string">"fuga"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> name<span class="token operator">:</span><span class="token string">"fuga"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</markdown></div></item-article></div></card-origin></div></app-article><!----></div><aside _ngcontent-kbh-c12="" class="root-content-side"></aside></div></main></root-content></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.e23ce7490b563c7b399c.js" defer=""></script><script src="polyfills.fd39c6f4e33f73743061.js" defer=""></script><script src="scripts.376f3b80765ffff2ab90.js" defer=""></script><script src="vendor.8425e307a241ba210bb7.js" defer=""></script><script src="main.e2da624138b91747b1b3.js" defer=""></script>
+
+</body></html>
