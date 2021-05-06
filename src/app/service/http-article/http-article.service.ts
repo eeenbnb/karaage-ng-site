@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service'
-
+import { TransferStateService } from '@scullyio/ng-lib';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -9,7 +9,8 @@ import { Observable, of } from 'rxjs';
 export class HttpArticleService {
 
   constructor(
-    private httpService:HttpService
+    private httpService:HttpService,
+    private transferStateService:TransferStateService
   ) { }
 
   getArticleData(date:string):Observable<string>{
@@ -22,7 +23,10 @@ export class HttpArticleService {
       return of("");
     }
 
-    return this.httpService.getURLDataToResponseTypeText(`assets/md-article/${parseData[0]}/${parseData[1]}/${parseData[2]}.md`);
+    return this.transferStateService.useScullyTransferState(
+      date,
+      this.httpService.getURLDataToResponseTypeText(`assets/md-article/${parseData[0]}/${parseData[1]}/${parseData[2]}.md`)
+    );
   }
 
   getFeatureData(name:string):Observable<string>{
