@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ItemBreadcrumbComponent } from './item-breadcrumb/item-breadcrumb.component';
 
-import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
+import { CardOriginModule } from '../card-origin/card-origin.module'
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
   ],
   imports: [
     CommonModule,
-    ReactWrapperModule
+    RouterModule,
+    CardOriginModule
   ],
   exports: [
     ItemBreadcrumbComponent
