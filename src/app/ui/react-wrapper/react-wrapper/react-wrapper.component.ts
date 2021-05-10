@@ -9,6 +9,7 @@ import * as ReactDOM from 'react-dom';
 })
 export class ReactWrapperComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() reactCompoent:React.Component<any> | any;
+  @Input() prop:any = {};
 
   constructor(
     private elementRef:ElementRef
@@ -19,7 +20,10 @@ export class ReactWrapperComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     ReactDOM.render(
-      React.createElement(this.reactCompoent),
+      React.createElement(
+        this.reactCompoent,
+        this.prop,
+      ),
       this.elementRef.nativeElement
     )
   }

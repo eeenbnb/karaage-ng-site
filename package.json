@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "node src/build/generate-list.js && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer && cp CNAME ./docs/CNAME && node src/build/generate-sitemap.js",
-    "build:netlify": "node src/build/generate-list.js && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer && node src/build/generate-sitemap.js && cp -r ./storybook-static ./docs/assets/stroybook && cp _redirects ./docs/_redirects && npx scully --",
+    "build:netlify": "node src/build/generate-list.js && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer --stats-json && node src/build/generate-sitemap.js && cp -r ./storybook-static ./docs/assets/stroybook && cp _redirects ./docs/_redirects && npx scully --",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -13,7 +13,8 @@
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
     "scully": "npx scully --",
-    "scully:serve": "npx scully serve --"
+    "scully:serve": "npx scully serve --",
+    "analyzer": "webpack-bundle-analyzer docs-static/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -69,6 +70,7 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.1.5"
+    "typescript": "~4.1.5",
+    "webpack-bundle-analyzer": "^4.4.1"
   }
 }

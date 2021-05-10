@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardOriginTitleComponent } from './card-origin-title/card-origin-title.component';
 
-import { CardOriginModule } from '../card-origin/card-origin.module'
+import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { CardOriginModule } from '../card-origin/card-origin.module'
   ],
   imports: [
     CommonModule,
-    CardOriginModule
+    ReactWrapperModule
   ],
   exports: [
     CardOriginTitleComponent

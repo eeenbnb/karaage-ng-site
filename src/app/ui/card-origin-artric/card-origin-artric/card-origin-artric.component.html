@@ -1,19 +1,9 @@
 <a class="link" [routerLink]="['article',article.path]">
-  <card-origin>
-    <div class="link-inner">
-      <div class="link-inner__image">
-        <img class="link-inner__image__img" [src]="article.thumbnail" alt="記事の画像"/>
-      </div>
-
-      <div class="link-inner__content">
-        <h3 class="link-inner__content__title">
-          {{article.title}}
-        </h3>
-
-        <button class="link-inner__content__button">
-          見る
-        </button>
-      </div>
-    </div>
-  </card-origin>
+  <react-wrapper
+    [reactCompoent]="ReactCardOriginArticle"
+    [prop]="{
+      article: article
+    }"
+  >
+  </react-wrapper>
 </a>

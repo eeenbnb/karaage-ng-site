@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ReactCardOriginTitle } from '../../_react-items/card-origin-title'
 
 @Component({
   selector: 'card-origin-title',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-origin-title.component.scss']
 })
 export class CardOriginTitleComponent implements OnInit {
+  @Input() title:string = "";
+  reactCardOriginTitle = ReactCardOriginTitle;
 
   constructor() { }
 

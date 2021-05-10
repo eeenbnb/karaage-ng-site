@@ -83,8 +83,8 @@ export class ArticleComponent implements OnInit, OnDestroy {
   private setInfoData(date:string){
     this.title = this.markdown.split('\n')[0].replace("#","");
     this.breadcrumbService.setBreadcrumbs([
-      { path:["/"], name:"top" },
-      { path:["/",this.articleType,date], name: this.title },
+      { path:[""], name:"top" },
+      { path:[".",this.articleType,date], name: this.title },
     ])
     this.titleMetaService.setTitle(this.title + ' | sushi karaage');
     this.titleMetaService.setMetaData(
