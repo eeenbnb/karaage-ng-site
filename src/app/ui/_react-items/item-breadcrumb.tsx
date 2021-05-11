@@ -8,28 +8,28 @@ type prop = {
   breadcrumbs:KaraageBreadcrumbs
 }
 
-const List = styled.ol`
-  list-style: none;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-  &::-webkit-scrollbar{
-    display: none;
+const List = styled.ol({
+  listStyle: "none",
+  display: "flex",
+  flexWrap: "nowrap",
+  overflowX: "scroll",
+  "&::-webkit-scrollbar":{
+    display: "none",
   }
-`
+})
 
-const One = styled.li`
-  margin-left: 4px;
-  white-space: nowrap;
-  a{
-    color: var(--color-Highlight);
-    font-size: 16px;
+const One = styled.li({
+  marginLeft: "4px",
+  whiteSpace: "nowrap",
+  a:{
+    color: "var(--color-Highlight)",
+    fontSize: "16px",
+  },
+  "&:not(:last-of-type):after":{
+    content: " > ",
+    marginRight: "4px"
   }
-  &:not(:last-of-type):after{
-    content: " > ";
-    margin-right: 4px;
-  }
-`
+})
 
 export const ReactItemBreadcrumb:React.FC<prop> = prop => {
   return (

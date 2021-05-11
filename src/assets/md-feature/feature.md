@@ -8,6 +8,10 @@
 - [x] top用データ生成スクリプト
 - [x] top用データの表示
 - [x] topページのintersector-Observables
+  - 変更する
+- [x] topページ ページネーション
+
+
 - [x] sitemap生成スクリプト
 - [x] titleとmeta
 - [x] faviconの作成

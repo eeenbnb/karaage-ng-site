@@ -44,9 +44,11 @@ export class TopComponent implements OnInit, OnDestroy {
 
     this.httpTopService.getTopData(this.pageCount).subscribe(
       (list:KaraageArticle[])=>{
-        this.topItems = this.topItems.concat(list);
-        this.isFirstLoadComplate = true;
-        this.pageCount ++;
+        if(list){
+          this.topItems = this.topItems.concat(list);
+          this.isFirstLoadComplate = true;
+          this.pageCount ++;
+        }
       },
       (err)=>{
         this.isEnd = true;

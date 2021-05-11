@@ -4,7 +4,9 @@
 
 ## 技術的な話
 
-Angularで作ってます。以下がリポジトリです。  
+主にAngularで作ってます。  
+一部UIにReactを使ったり、AngularのSSGであるScully等も使ってます。
+以下がリポジトリです。  
 [eeenbnb/karaage-ng-site](https://github.com/eeenbnb/karaage-ng-site)
 
 ### ng --version
