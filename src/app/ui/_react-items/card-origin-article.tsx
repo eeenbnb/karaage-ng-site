@@ -11,57 +11,24 @@ type prop = {
   article:KaraageArticle
 }
 
-const Inner = styled.div`
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  grid-gap: 0 var(--size-itemDistanceMargin);
-`
-const InnerImage = styled.div`
-  width: 120px;
-  height: 120px;
-`
-const InnerImageImg = styled.img`
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-`
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-const ContentTitle = styled.h2`
-  color: var(--color-Paragraph);
-  font-size: 16px;
-  @include line-clamp(2);
-`
-const ContentButton = styled.button`
-  margin-top: auto;
-  width: 100%;
-  height: 40px;
-  border: none;
-  background-color: var(--color-Button);
-  color: var(--color-Paragraph);
-  font-size: 14px;
-`
-
 export const ReactCardOriginArticle:React.FC<prop> = prop => {
   return (
     <ReactCardOrigin>
-      <Inner>
-        <InnerImage>
-          <InnerImageImg src={prop.article.thumbnail} alt={"記事の画像"}/>
-        </InnerImage>
+      <div className="card-origin-article">
+        <div className="card-origin-article__image">
+          <img  className="card-origin-article__image__img" src={prop.article.thumbnail} alt={"記事の画像"}/>
+        </div>
 
-        <Content>
-          <ContentTitle>
+        <div className="card-origin-article__content">
+          <h2 className="card-origin-article__content__title">
             {prop.article.title}
-          </ContentTitle>
+          </h2>
 
-          <ContentButton>
+          <button className="card-origin-article__content__button">
             見る
-          </ContentButton>
-        </Content>
-      </Inner>
+          </button>
+        </div>
+      </div>
     </ReactCardOrigin>
   );
 }
