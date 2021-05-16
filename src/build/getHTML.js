@@ -4,11 +4,12 @@ const request = require('request');
 const path = require('path');
 const { JSDOM } = require('jsdom')
 
-const urls = fs.readFileSync(
-    path.resolve(__dirname,"url.txt"),'utf8')
-    .split('\n')
-    .filter(t=>t.length > 0
-  );
+const urls = fs
+  .readFileSync(
+    path.resolve(__dirname,"url.txt"),'utf8'
+  )
+  .split('\n')
+  .filter(t=>t.length > 0);
 
 const get = (url) =>{
   return new Promise((resolve, reject)=>{
