@@ -29,10 +29,15 @@ const get = (url) =>{
 
 const htmlParse = (htmlText) =>{
   try{
-    const dom = new JSDOM(htmlText);
+    const dom = new JSDOM(htmlText,{
+      runScripts: "dangerously",
+      resources: "usable"
+    });
     // get element
-    const text = dom.window.document.title;
-    console.log(`text:`,text);
+    setTimeout(()=>{
+      const text = dom.window.document.title;
+      console.log(`text:`,text);
+    },1000);
   }catch (e){
     console.error(e)
   }

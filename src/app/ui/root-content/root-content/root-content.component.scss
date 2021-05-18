@@ -33,6 +33,7 @@
 
   &-main{
     padding-top: var(--size-header);
+    padding-bottom: var(--size-itemDistanceMargin);
 
     @include PcCss{
       display: flex;

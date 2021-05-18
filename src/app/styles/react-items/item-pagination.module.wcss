@@ -1,0 +1,16 @@
+.item-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-pagination__item{
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.item-pagination__item__inner{
+  padding: 4px 8px;
+  color: var(--color-Headline);
+  font-size: 16px;
+}

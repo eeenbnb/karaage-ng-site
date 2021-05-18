@@ -25,13 +25,6 @@ const routes: Routes = [
       articleType: ArticleType.Feature
     }
   },
-  {
-    path: "test-page",
-    loadChildren: ()=> import("../pages/test-feild/test-feild.module").then(m => m.TestFeildModule),
-    data:{
-
-    }
-  },
 ];
 
 @NgModule({

@@ -21,4 +21,11 @@ export class HttpTopService {
       this.httpService.getURLDataToResponseTypeJson(`assets/data/top-${page}.json`)
     );
   }
+
+  getTopPageCount():Observable<{count:number}>{
+    return this.transferStateService.useScullyTransferState(
+      "top-pages-count",
+      this.httpService.getURLDataToResponseTypeJson(`assets/data/page.json`)
+    );
+  }
 }

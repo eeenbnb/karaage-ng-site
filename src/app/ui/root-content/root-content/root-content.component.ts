@@ -26,6 +26,7 @@ export class RootContentComponent implements OnInit, OnDestroy {
       (params: any) => {
         this.gaService.sendPageView(params.url);
         this.canonicalService.setCanonicalURL();
+        window.scroll({top: 0});
       }
     );
 

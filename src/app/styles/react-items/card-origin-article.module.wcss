@@ -22,6 +22,11 @@
 .card-origin-article__content__title{
   color: var(--color-Paragraph);
   font-size: 16px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .card-origin-article__content__button{
   margin-top: auto;

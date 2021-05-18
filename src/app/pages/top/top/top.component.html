@@ -16,9 +16,13 @@
   </list-child>
 
   <!-- bottom -->
-  <item-intersection-observer
-    (viewEvent)="bottomLoad()"
-    *ngIf="isFirstLoadComplate"
-  >
-  </item-intersection-observer>
+  <list-child>
+    <item-pagination
+      [(count)]="pageCount"
+      [maxCount]="maxPageCount"
+      *ngIf="isPageCountLoadComplate"
+    >
+    </item-pagination>
+  </list-child>
+
 </list-parent>

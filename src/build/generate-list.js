@@ -17,6 +17,13 @@ fs.writeFileSync(`./src/assets/data/all.json`,JSON.stringify(item),(err)=>{
   if(err) console.log(err);
 });
 
+fs.writeFileSync(`./src/assets/data/page.json`,JSON.stringify({
+  count: glob.sync("./src/assets/data/top-*.json").length
+}),(err)=>{
+  if(err) console.log(err);
+});
+
+
 
 //
 function newArticleList(dateFilePath = generateDate(),m = 0){

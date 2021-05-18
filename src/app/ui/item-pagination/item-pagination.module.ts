@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactCardComponent } from './react-card/react-card.component';
+import { RouterModule } from '@angular/router';
+import { ItemPaginationComponent } from './item-pagination/item-pagination.component';
 
 import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
 
 @NgModule({
   declarations: [
-    ReactCardComponent
+    ItemPaginationComponent
   ],
   imports: [
     CommonModule,
+    RouterModule,
     ReactWrapperModule
   ],
   exports: [
-    ReactCardComponent
+    ItemPaginationComponent
   ],
 })
-export class ReactCardModule { }
+export class ItemPaginationModule { }
