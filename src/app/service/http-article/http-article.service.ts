@@ -33,6 +33,9 @@ export class HttpArticleService {
     if(!name){
       return of("");
     }
-    return this.httpService.getURLDataToResponseTypeText(`assets/md-feature/${name}.md`);
+    return this.transferStateService.useScullyTransferState(
+      name,
+      this.httpService.getURLDataToResponseTypeText(`assets/md-feature/${name}.md`)
+    );
   }
 }
