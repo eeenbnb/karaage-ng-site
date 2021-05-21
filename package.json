@@ -29,6 +29,7 @@
     "@scullyio/init": "^1.1.4",
     "@scullyio/ng-lib": "^1.0.0",
     "@scullyio/scully": "^1.0.0",
+    "firebase-tools": "^9.11.0",
     "github-markdown-css": "^4.0.0",
     "glob": "^7.1.6",
     "glob-promise": "^4.1.0",
