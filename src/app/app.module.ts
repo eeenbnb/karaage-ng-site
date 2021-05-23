@@ -11,6 +11,9 @@ import { RootContentModule } from './ui/root-content/root-content.module';
 import { AppComponent } from './app.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 
+import { StoreModule } from '@ngrx/store';
+import { breadcrumbsReducer } from './ngrx/breadcrumb/breadcrumb.reducer'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,8 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 
     AppRoutingModule,
     RootContentModule,
-    ScullyLibModule
+    ScullyLibModule,
+    StoreModule.forRoot({breadcrumbs:breadcrumbsReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
