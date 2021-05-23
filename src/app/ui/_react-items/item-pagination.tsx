@@ -17,7 +17,7 @@ export const ReactItemPagination:React.FC<prop> = prop => {
           return (
             <div className={cssStyle.default["item-pagination__item"]}>
               <ReactCardOrigin isNoPadding={true}>
-                <a className={cssStyle.default["item-pagination__item__inner"]} href={ i != 0 ? '/?page=' + (i + 1):"/" } onClick={(e)=>{
+                <a className={cssStyle.default["item-pagination__item__inner"]} href={ i != 0 ? '/page/' + (i + 1):"/" } onClick={(e)=>{
                   e.preventDefault();
                   prop.onClick(e,i + 1)
                 }}>

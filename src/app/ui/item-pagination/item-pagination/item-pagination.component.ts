@@ -28,7 +28,11 @@ export class ItemPaginationComponent implements OnInit {
   }
 
   onClick(e:Event,i:number){
-    this.router.navigate(["/"],{queryParams:{page:i}});
+    if(i == 1){
+      this.router.navigate(["/"]);
+    }else{
+      this.router.navigate(["/page",i]);
+    }
     this.countChange.emit(i);
   }
 

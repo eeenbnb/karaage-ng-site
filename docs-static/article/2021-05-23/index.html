@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="ja"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <title> NgRxを使用する。 | sushi karaage</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- ad -->
+    <!-- <script data-ad-client="ca-pub-1402534084833535" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  <style>:root{--color-Background:#faeee7;--color-Headline:#ff8ba7;--color-Paragraph:#594a4e;--color-Button:#faae2b;--color-ButtonText:#33272a;--color-Stroke:#33272a;--color-Main:#fffffe;--color-Highlight:#ff8ba7;--color-Secondary:#ffc6c7;--color-Tertiary:#c3f0ca;--font-size-1:5rem;--font-size-2:4.5rem;--font-size-3:4rem;--font-size-4:3.5rem;--font-size-5:3rem;--font-size-6:2.5rem;--icon-hum:assets/icons/hum.svg;}@media (min-width:720px){:root{--size-header:50px;--size-conteinerSize:720px;--size-sideItemSize:240px;--size-maxPcWidthSize:1296px;--size-cardBorder:20px;--size-itemDistanceMargin:24px;--size-itemInnerPadding:24px;}}@media (max-width:720px){:root{--size-header:50px;--size-conteinerSize:720px;--size-sideItemSize:240px;--size-maxPcWidthSize:1296px;--size-cardBorder:20px;--size-itemDistanceMargin:12px;--size-itemInnerPadding:12px;}}body{margin:0;padding:0;}</style><link rel="stylesheet" href="styles.cbefd79ea3d3a6eef0de.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.cbefd79ea3d3a6eef0de.css"></noscript><style></style><style>.root-content[_ngcontent-sbv-c12]{min-height:calc(100vh);background-color:var(--color-Background);background-image:url(/assets/background/bg.svg);background-size:72px 72px}.root-content-header[_ngcontent-sbv-c12]{width:100vw;height:var(--size-header);position:fixed;top:0;left:0}.root-content-side[_ngcontent-sbv-c12]{margin:var(--size-itemDistanceMargin)}@media (min-width:720px){.root-content-side[_ngcontent-sbv-c12]{width:var(--size-sideItemSize)}}@media (max-width:1296px){.root-content-side[_ngcontent-sbv-c12]{width:var(--size-conteinerSize);margin-bottom:0}}@media (max-width:720px){.root-content-side[_ngcontent-sbv-c12]{width:auto}}.root-content-side[_ngcontent-sbv-c12]:empty{height:0}.root-content-main[_ngcontent-sbv-c12]{padding-top:var(--size-header);padding-bottom:var(--size-itemDistanceMargin)}@media (min-width:720px){.root-content-main[_ngcontent-sbv-c12]{display:flex;justify-content:center}}@media (max-width:1296px){.root-content-main[_ngcontent-sbv-c12]{flex-direction:column;align-items:center}}.root-content-main-inner[_ngcontent-sbv-c12]{margin-top:var(--size-itemDistanceMargin);margin-bottom:var(--size-itemDistanceMargin)}@media (max-width:720px){.root-content-main-inner[_ngcontent-sbv-c12]{margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}@media (min-width:720px){.root-content-main-inner[_ngcontent-sbv-c12]{width:var(--size-conteinerSize)}}.root-content-main-inner-breadcrumb[_ngcontent-sbv-c12]{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.header[_ngcontent-sbv-c7]{width:100%;height:100%;background-color:var(--color-Highlight);box-shadow:0 3px 6px rgba(0,0,0,.16)}@media (min-width:720px){.header[_ngcontent-sbv-c7]{display:flex;align-items:center;justify-content:center}}.header__inner[_ngcontent-sbv-c7]{height:100%;display:flex;align-items:center;position:relative}@media (min-width:720px){.header__inner[_ngcontent-sbv-c7]{width:var(--size-maxPcWidthSize)}}@media (max-width:1296px){.header__inner[_ngcontent-sbv-c7]{width:var(--size-conteinerSize)}}@media (max-width:720px){.header__inner[_ngcontent-sbv-c7]{width:auto;margin-left:var(--size-itemInnerPadding);margin-right:var(--size-itemInnerPadding)}}.header__inner__a[_ngcontent-sbv-c7]{font-size:24px;color:var(--color-Paragraph)}.header__inner__hum[_ngcontent-sbv-c7]{margin-left:auto;width:24px;height:20px;-webkit-mask-image:url(/assets/icons/hum.svg);mask-image:url(/assets/icons/hum.svg);background-color:var(--color-Paragraph)}.hum-item[_ngcontent-sbv-c7]{width:var(--size-sideItemSize);display:none;position:absolute;top:calc(var(--size-header) + 12px);right:0;overflow:hidden;border-radius:var(--size-cardBorder);box-shadow:0 3px 6px rgba(0,0,0,.16)}.hum-item[is-view=true][_ngcontent-sbv-c7]{display:block}.hum-item__one[_ngcontent-sbv-c7]{display:block;padding:12px;color:var(--color-Headline)}.hum-item__one[_ngcontent-sbv-c7]:not(:last-child){border-bottom:1px solid var(--color-Paragraph)}</style><style>.image[_ngcontent-sbv-c10]{display:flex;justify-content:center}.image__img[_ngcontent-sbv-c10]{width:64px;height:64px;border-radius:32px;object-fit:contain}.title[_ngcontent-sbv-c10]{color:var(--color-Paragraph);font-size:16px}.link[_ngcontent-sbv-c10]{display:flex;flex-direction:column}.link[_ngcontent-sbv-c10]   a[_ngcontent-sbv-c10]{color:var(--color-Highlight);font-size:16px}</style><style>.card-origin[_ngcontent-sbv-c6]{padding:var(--size-itemInnerPadding);background-color:var(--color-Main);border:3px solid var(--color-Paragraph);border-radius:var(--size-cardBorder)}.card-origin[no-padding=true][_ngcontent-sbv-c6]{padding:0}</style><style>.list list-child:not(:first-child) .one{margin-top:var(--size-itemDistanceMargin)}.list list-child:not(:last-child) .one{margin-bottom:var(--size-itemDistanceMargin)}</style><style>.breadcrumb[_ngcontent-sbv-c11]{list-style:none;display:flex;flex-wrap:nowrap;overflow-x:scroll}.breadcrumb[_ngcontent-sbv-c11]::-webkit-scrollbar{display:none}.breadcrumb__item[_ngcontent-sbv-c11]{margin-left:4px;white-space:nowrap}.breadcrumb__item[_ngcontent-sbv-c11]   a[_ngcontent-sbv-c11]{color:var(--color-Highlight);font-size:16px}.breadcrumb__item[_ngcontent-sbv-c11]:not(:last-of-type):after{content:" > ";margin-right:4px}</style><style>.IpDie80PE4GF_PfWbPsKc{
+  padding: var(--size-itemInnerPadding);
+  background-color: var(--color-Main);
+  border: 3px solid var(--color-Paragraph);
+  border-radius: var(--size-cardBorder);
+}
+</style><style>._3Lux4gEwsiz4VUQ1f218gm{
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-gap: 0 var(--size-itemDistanceMargin);
+}
+
+.IC3C1vGtEgF4Kw6Gt0g8z{
+  width: 120px;
+  height: 120px;
+}
+._1E7PD4_scSQQuEwNFM052Z{
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+
+._33rWrFHh1YFZDACtfLQYb0{
+  display: flex;
+  flex-direction: column;
+}
+._2D021pOoxYqW_fiONzrbm4{
+  color: var(--color-Paragraph);
+  font-size: 16px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+._3B81MA5Sx05gKQHHhr8A1W{
+  margin-top: auto;
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: var(--color-Button);
+  color: var(--color-Paragraph);
+  font-size: 14px;
+}
+</style><style>.lZHlmt3pZUk1ILVWIl-0u{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MIhuM6uH-clrDxdtErTPL{
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+._1TkA5XwKR1PXWrzZYPEjJZ{
+  padding: 4px 8px;
+  color: var(--color-Headline);
+  font-size: 16px;
+}
+</style><style>@charset "UTF-8";.info{display:flex}.info__date{color:var(--color-Stroke);font-size:14px;margin-right:4px}.info__date:before{content:"📅";margin-right:4px}.info__tags{display:flex}.info__tags__one{margin-right:4px;padding-left:4px;padding-right:4px;color:var(--color-Stroke);font-size:14px;border:1px solid var(--color-Headline);border-radius:8px}</style><link rel="canonical" href="http://localhost:1864/article/2021-05-23"><meta name="keywords" content="blog, Angular"><meta name="description" content="# NgRxを使用する。
+
+## install
+```bash
+ng add @ngrx/store@latest
+```
+
+```bash
+npm install -D @ngrx/schematics
+ng config cli.defaultCollection @ngrx/schematics
+```
+
+`app.module.ts` に上書きが入る。
+```typescript
+...
+import { StoreModule } from '@ngrx/store';
+
+@NgModule({
+  ...
+  imports: [
+    ...
+    StoreModule."><meta name="og:site_name" content=" NgRxを使用する。 | sushi karaage"><meta name="og:description" content="# NgRxを使用する。
+
+## install
+```bash
+ng add @ngrx/store@latest
+```
+
+```bash
+npm install -D @ngrx/schematics
+ng config cli.defaultCollection @ngrx/schematics
+```
+
+`app.module.ts` に上書きが入る。
+```typescript
+...
+import { StoreModule } from '@ngrx/store';
+
+@NgModule({
+  ...
+  imports: [
+    ...
+    StoreModule."><meta name="og:title" content=" NgRxを使用する。 | sushi karaage"><meta name="og:url" content="https://sushi.karaage.tokyo/#/article/2021-05-23"><meta name="og:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="twitter:image" content="https://sushi.karaage.tokyo/assets/img/no-img.png"><meta name="og:type" content="website"><meta name="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@sushi_karaage"><script>window['ScullyIO']='generated';</script></head>
+
+  <body scully-version="1.1.1">
+    <app-root _nghost-sbv-c13="" ng-version="12.0.1"><root-content _ngcontent-sbv-c13="" _nghost-sbv-c12=""><main _ngcontent-sbv-c12="" class="root-content"><header _ngcontent-sbv-c12="" class="root-content-header"><root-header _ngcontent-sbv-c12="" _nghost-sbv-c7=""><div _ngcontent-sbv-c7="" class="header"><div _ngcontent-sbv-c7="" class="header__inner"><a _ngcontent-sbv-c7="" routerlink="/" class="header__inner__a" href="/"> Sushi karaage </a><div _ngcontent-sbv-c7="" class="header__inner__hum"></div><div _ngcontent-sbv-c7="" class="hum-item" is-view="false"><card-origin _ngcontent-sbv-c7="" _nghost-sbv-c6=""><div _ngcontent-sbv-c6="" class="card-origin" no-padding="true"><a _ngcontent-sbv-c7="" routerlink="/feature/profile" class="hum-item__one" href="/feature/profile"> 自己紹介 </a><a _ngcontent-sbv-c7="" routerlink="/feature/site" class="hum-item__one" href="/feature/site"> このサイトについて </a><a _ngcontent-sbv-c7="" routerlink="/feature/feature" class="hum-item__one" href="/feature/feature"> 開発ログ </a></div></card-origin></div></div></div></root-header></header><div _ngcontent-sbv-c12="" class="root-content-main"><aside _ngcontent-sbv-c12="" class="root-content-side"><root-side _ngcontent-sbv-c12="" _nghost-sbv-c10=""><card-origin _ngcontent-sbv-c10="" _nghost-sbv-c6=""><div _ngcontent-sbv-c6="" class="card-origin" no-padding="false"><list-parent _ngcontent-sbv-c10=""><div class="list"><list-child _ngcontent-sbv-c10=""><div class="one"><div _ngcontent-sbv-c10="" class="image"><img _ngcontent-sbv-c10="" src="assets/img/no-img.png" alt="jinya kitazumeの画像" class="image__img"></div></div></list-child><list-child _ngcontent-sbv-c10=""><div class="one"><p _ngcontent-sbv-c10="" class="title"> sushi karaage </p><div _ngcontent-sbv-c10="" class="link"><a _ngcontent-sbv-c10="" href="https://github.com/eeenbnb" target="_blank" rel="noreferrer"> github </a><a _ngcontent-sbv-c10="" href="https://twitter.com/sushi_karaage" target="_blank" rel="noreferrer"> twitter </a></div></div></list-child></div></list-parent></div></card-origin></root-side></aside><div _ngcontent-sbv-c12="" class="root-content-main-inner"><div _ngcontent-sbv-c12="" class="root-content-main-inner-breadcrumb"><item-breadcrumb _ngcontent-sbv-c12="" _nghost-sbv-c11=""><card-origin _ngcontent-sbv-c11="" _nghost-sbv-c6=""><div _ngcontent-sbv-c6="" class="card-origin" no-padding="false"><ol _ngcontent-sbv-c11="" itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li _ngcontent-sbv-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-sbv-c11="" itemprop="item" href="/"><span _ngcontent-sbv-c11="" itemprop="name">top</span></a><meta _ngcontent-sbv-c11="" itemprop="position" content="0"></li><!----><li _ngcontent-sbv-c11="" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb__item"><a _ngcontent-sbv-c11="" itemprop="item" href="/article/2021-05-23"><span _ngcontent-sbv-c11="" itemprop="name"> NgRxを使用する。</span></a><meta _ngcontent-sbv-c11="" itemprop="position" content="1"></li><!----><!----></ol></div></card-origin><!----></item-breadcrumb></div><!----><router-outlet _ngcontent-sbv-c13=""></router-outlet><app-article _nghost-sbv-c20=""><div _ngcontent-sbv-c20="" class="article"><card-origin _ngcontent-sbv-c20="" _nghost-sbv-c6=""><div _ngcontent-sbv-c6="" class="card-origin" no-padding="false"><item-article _ngcontent-sbv-c20=""><div class="item-article markdown-body"><markdown><h1 id="ngrxを使用する。">NgRxを使用する。</h1>
+<h2 id="install">install</h2>
+<pre class=" language-bash"><code class=" language-bash">ng <span class="token function">add</span> @ngrx/store@latest
+</code></pre>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">npm</span> <span class="token function">install</span> -D @ngrx/schematics
+ng config cli.defaultCollection @ngrx/schematics
+</code></pre>
+<p><code>app.module.ts</code> に上書きが入る。</p>
+<pre class=" language-typescript"><code class=" language-typescript"><span class="token operator">...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> StoreModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@ngrx/store'</span><span class="token punctuation">;</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  imports<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token operator">...</span>
+    StoreModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+</code></pre>
+<h2 id="概要">概要</h2>
+<p>NgRxのライフサイクルは以下の通り<br><img src="./assets/img/2021/05/23/01.png" alt="NgRx01"></p>
+<p><code>store</code> にある物を <code>Action</code> で <code>reducer</code> で処理し <code>selector</code> で取得するといった感じ。間にRxJsが入っているのでストリームとして受け取ることができる優れもの。</p>
+<p>まずはこのブログで使っている<a href="https://github.com/eeenbnb/karaage-ng-site/blob/master/src/app/service/breadcrumb/breadcrumb.service.ts">BreadcrumbService</a>をNgRX化する。</p>
+<h2 id="state-を定義する">state を定義する</h2>
+<pre class=" language-typescript"><code class=" language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> KaraageBreadcrumbs <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'src/@types/karaage-breadcrumb'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">BreadcrumbsState</span> <span class="token punctuation">{</span>
+  breadcrumbs<span class="token operator">:</span> KaraageBreadcrumbs<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="actionを定義する">Actionを定義する</h2>
+<pre class=" language-typescript"><code class=" language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> createAction<span class="token punctuation">,</span> props <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@ngrx/store'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BreadcrumbsState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./breadcrumb.state'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> setBreadcrumbs <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span>
+  <span class="token string">'[breadcrumbs] set'</span><span class="token punctuation">,</span>
+  <span class="token generic-function"><span class="token function">props</span><span class="token generic class-name"><span class="token operator">&lt;</span>BreadcrumbsState<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> resetBreadcrumbs <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">'[breadcrumbs] reset'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="reducerを定義する">Reducerを定義する</h2>
+<pre class=" language-typescript"><code class=" language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> createReducer<span class="token punctuation">,</span> on <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@ngrx/store'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> setBreadcrumbs<span class="token punctuation">,</span> resetBreadcrumbs <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./breadcrumb.actions'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BreadcrumbsState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./breadcrumb.state'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> breadcrumbsFeatureKey <span class="token operator">=</span> <span class="token string">'Breadcrumbs'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> initialBreadcrumbs<span class="token operator">:</span>BreadcrumbsState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  breadcrumbs<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> _breadcrumbsReducer <span class="token operator">=</span> <span class="token function">createReducer</span><span class="token punctuation">(</span>
+  initialBreadcrumbs<span class="token punctuation">,</span>
+  <span class="token function">on</span><span class="token punctuation">(</span>setBreadcrumbs<span class="token punctuation">,</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span>props<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token punctuation">{</span>
+      breadcrumbs<span class="token operator">:</span><span class="token punctuation">[</span><span class="token operator">...</span>props<span class="token punctuation">.</span>breadcrumbs<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">on</span><span class="token punctuation">(</span>resetBreadcrumbs<span class="token punctuation">,</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token punctuation">{</span>
+      breadcrumbs<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">breadcrumbsReducer</span><span class="token punctuation">(</span>state<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">,</span> action<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">_breadcrumbsReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="selector-を定義する">selector を定義する</h2>
+<pre class=" language-typescript"><code class=" language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelector<span class="token punctuation">,</span> createFeatureSelector <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@ngrx/store"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BreadcrumbsState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./breadcrumb.state"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> breadcrumbsFeatureKey <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./breadcrumb.reducer'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> getState <span class="token operator">=</span> <span class="token generic-function"><span class="token function">createFeatureSelector</span><span class="token generic class-name"><span class="token operator">&lt;</span>BreadcrumbsState<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>breadcrumbsFeatureKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> selectBreadcrumbs <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  getState<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> state
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="module-でまとめる">module でまとめる</h2>
+<p>割愛<br><a href="https://github.com/eeenbnb/karaage-ng-site/blob/master/src/app/ngrx">ソースコードを見て</a></p>
+<h2 id="fixme">Fixme</h2>
+<p>2021-05-23<br>酔っぱらいコーディングで動いたのでとりあえずデプロイしてるのでしっかり書く。</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://ngrx.io/guide/store/walkthrough">https://ngrx.io/guide/store/walkthrough</a><br><a href="https://dev.classmethod.jp/articles/beginner-ngrx-angular-app/">https://dev.classmethod.jp/articles/beginner-ngrx-angular-app/</a><br><a href="https://github.com/nishimura-yuji/ngrx8-tutorial">https://github.com/nishimura-yuji/ngrx8-tutorial</a>  </p>
+</markdown></div></item-article></div></card-origin></div></app-article><!----></div><aside _ngcontent-sbv-c12="" class="root-content-side"></aside></div></main></root-content></app-root>
+  <script id="ScullyIO-transfer-state">{window['ScullyIO-transfer-state']=_u(`/** ___SCULLY_STATE_START___ */{"2021-05-23":"# NgRxを使用する。\n\n## install\n_~b~_~b~_~b~bash\nng add @ngrx_~s~store@latest\n_~b~_~b~_~b~\n\n_~b~_~b~_~b~bash\nnpm install -D @ngrx_~s~schematics\nng config cli.defaultCollection @ngrx_~s~schematics\n_~b~_~b~_~b~\n\n_~b~app.module.ts_~b~ に上書きが入る。\n_~b~_~b~_~b~typescript\n...\nimport { StoreModule } from _~q~@ngrx_~s~store_~q~;\n\n@NgModule({\n  ...\n  imports: [\n    ...\n    StoreModule.forRoot({}, {})\n  ],\n  ...\n})\nexport class AppModule { }\n_~b~_~b~_~b~\n\n\n## 概要\n\nNgRxのライフサイクルは以下の通り  \n![NgRx01](._~s~assets_~s~img_~s~2021_~s~05_~s~23_~s~01.png)\n\n\n_~b~store_~b~ にある物を _~b~Action_~b~ で _~b~reducer_~b~ で処理し _~b~selector_~b~ で取得するといった感じ。間にRxJsが入っているのでストリームとして受け取ることができる優れもの。\n\nまずはこのブログで使っている[BreadcrumbService](https:_~s~_~s~github.com_~s~eeenbnb_~s~karaage-ng-site_~s~blob_~s~master_~s~src_~s~app_~s~service_~s~breadcrumb_~s~breadcrumb.service.ts)をNgRX化する。\n\n## state を定義する\n_~b~_~b~_~b~typescript\nimport { KaraageBreadcrumbs } from _~q~src_~s~@types_~s~karaage-breadcrumb_~q~;\n\nexport interface BreadcrumbsState {\n  breadcrumbs: KaraageBreadcrumbs;\n}\n_~b~_~b~_~b~\n\n## Actionを定義する\n\n_~b~_~b~_~b~typescript\nimport { createAction, props } from _~q~@ngrx_~s~store_~q~;\nimport { BreadcrumbsState } from _~q~._~s~breadcrumb.state_~q~\n\nexport const setBreadcrumbs = createAction(\n  _~q~[breadcrumbs] set_~q~,\n  props_~l~BreadcrumbsState_~g~()\n);\nexport const resetBreadcrumbs = createAction(_~q~[breadcrumbs] reset_~q~);\n_~b~_~b~_~b~\n\n## Reducerを定義する\n\n_~b~_~b~_~b~typescript\nimport { createReducer, on } from _~q~@ngrx_~s~store_~q~;\nimport { setBreadcrumbs, resetBreadcrumbs } from _~q~._~s~breadcrumb.actions_~q~;\nimport { BreadcrumbsState } from _~q~._~s~breadcrumb.state_~q~\n\nexport const breadcrumbsFeatureKey = _~q~Breadcrumbs_~q~;\nexport const initialBreadcrumbs:BreadcrumbsState = {\n  breadcrumbs:[]\n};\n\nconst _breadcrumbsReducer = createReducer(\n  initialBreadcrumbs,\n  on(setBreadcrumbs, (state,props) =_~g~ (\n    {\n      breadcrumbs:[...props.breadcrumbs]\n    }\n  )),\n  on(resetBreadcrumbs, (state) =_~g~ (\n    {\n      breadcrumbs:[]\n    }\n  )),\n);\n\nexport function breadcrumbsReducer(state:any, action:any) {\n  return _breadcrumbsReducer(state, action);\n}\n_~b~_~b~_~b~\n\n## selector を定義する\n\n_~b~_~b~_~b~typescript\nimport { createSelector, createFeatureSelector } from _~d~@ngrx_~s~store_~d~;\nimport { BreadcrumbsState } from _~d~._~s~breadcrumb.state_~d~;\nimport { breadcrumbsFeatureKey } from _~q~._~s~breadcrumb.reducer_~q~;\n\nconst getState = createFeatureSelector_~l~BreadcrumbsState_~g~(breadcrumbsFeatureKey);\n\nexport const selectBreadcrumbs = createSelector(\n  getState,\n  (state) =_~g~ state\n);\n_~b~_~b~_~b~\n\n## module でまとめる\n割愛  \n[ソースコードを見て](https:_~s~_~s~github.com_~s~eeenbnb_~s~karaage-ng-site_~s~blob_~s~master_~s~src_~s~app_~s~ngrx)\n\n\n## Fixme\n2021-05-23  \n酔っぱらいコーディングで動いたのでとりあえずデプロイしてるのでしっかり書く。\n\n\n## 参考\nhttps:_~s~_~s~ngrx.io_~s~guide_~s~store_~s~walkthrough  \nhttps:_~s~_~s~dev.classmethod.jp_~s~articles_~s~beginner-ngrx-angular-app_~s~  \nhttps:_~s~_~s~github.com_~s~nishimura-yuji_~s~ngrx8-tutorial  \n"}/** ___SCULLY_STATE_END___ */`);function _u(t){t=t.split('/** ___SCULLY_STATE_START___ */')[1].split('/** ___SCULLY_STATE_END___ */')[0];const u={'_~b~': "`",'_~q~': "'",'_~o~': '$','_~s~': '/','_~l~': '<','_~g~': '>'};return JSON.parse(t.replace(/_~d~/g,'\\"').replace(/_~[^]~/g, (s) => u[s]).replace(/\n/g,'\\n').replace(/\t/g,'\\t').replace(/\r/g,'\\r'));}}</script><script src="runtime.c5c361e51482c6c89708.js" defer=""></script><script src="polyfills.fe8dbc1d3893f075a87e.js" defer=""></script><script src="scripts.376f3b80765ffff2ab90.js" defer=""></script><script src="vendor.1237cf3784b5026f64e8.js" defer=""></script><script src="main.66d33888e9b4efda4870.js" defer=""></script>
+
+</body></html>

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { setBreadcrumbs } from '../../../ngrx/breadcrumb/breadcrumb.actions'
 
@@ -31,9 +31,10 @@ export class TopComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(
-      (params:Params)=>{
-        this.pageCount = params["page"] ? params["page"] : 1;
+    this.activatedRoute.paramMap.subscribe(
+      (params:ParamMap)=>{
+        let p = params.get("pageCount");
+        this.pageCount = isNaN(Number(p)) ? Number(p) : 1;
         this.topItems = [];
         this.getItems();
       }

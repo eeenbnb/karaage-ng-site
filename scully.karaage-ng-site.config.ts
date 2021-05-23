@@ -6,7 +6,7 @@ const topPageCount:any = JSON.parse(fs.readFileSync("src/assets/data/page.json",
 
 const articles:string[] = items.map((v)=> "/article/" + v.path);
 const features:string[] = ["/feature/feature","/feature/profile","/feature/site"];
-const tops:string[] = [...Array(topPageCount.count)].map((_,i)=>"/?page=" + (i + 1));
+const tops:string[] = [...Array(topPageCount.count)].map((_,i)=>"/page/" + (i + 1));
 
 export const config: ScullyConfig = {
   projectRoot: "./src",

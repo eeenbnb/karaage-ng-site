@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: "",
     component: TopComponent,
+  },
+  {
+    path: "page/:pageCount",
+    component: TopComponent,
   }
 ];
 
