@@ -6,7 +6,6 @@ import { Store } from '@ngrx/store';
 import { setBreadcrumbs } from '../../../ngrx/breadcrumb/breadcrumb.actions'
 
 import { HttpArticleService } from '../../../service/http-article/http-article.service'
-import { BreadcrumbService } from '../../../service/breadcrumb/breadcrumb.service'
 import { TitleMetaService } from '../../../service/title-meta/title-meta.service'
 
 import { ArticleType } from '../../../const-data/article'
@@ -29,7 +28,6 @@ export class ArticleComponent implements OnInit, OnDestroy {
     private store: Store,
     private activatedRoute:ActivatedRoute,
     private httpArticleService:HttpArticleService,
-    private breadcrumbService:BreadcrumbService,
     private titleMetaService:TitleMetaService
   ) {
     this.articleType = this.activatedRoute.snapshot.data.articleType;
@@ -86,10 +84,6 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   private setInfoData(date:string){
     this.title = this.markdown.split('\n')[0].replace("#","");
-    this.breadcrumbService.setBreadcrumbs([
-      { path:[""], name:"top" },
-      { path:[".",this.articleType,date], name: this.title },
-    ])
     this.store.dispatch(
       setBreadcrumbs(
         {

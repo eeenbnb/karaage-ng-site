@@ -1,8 +1,8 @@
 import { createAction, props } from '@ngrx/store';
-import { KaraageBreadcrumbs } from 'src/@types/karaage-breadcrumb';
+import { BreadcrumbsState } from './breadcrumb.state'
 
 export const setBreadcrumbs = createAction(
   '[breadcrumbs] set',
-  props<{breadcrumbs:KaraageBreadcrumbs}>()
+  props<BreadcrumbsState>()
 );
 export const resetBreadcrumbs = createAction('[breadcrumbs] reset');

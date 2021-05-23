@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { setBreadcrumbs } from '../../../ngrx/breadcrumb/breadcrumb.actions'
 
 import { HttpTopService } from '../../../service/http-top/http-top.service'
-import { BreadcrumbService } from '../../../service/breadcrumb/breadcrumb.service'
 import { TitleMetaService } from '../../../service/title-meta/title-meta.service'
 
 import { KaraageArticle } from 'src/@types/karaage-article';
@@ -21,9 +22,9 @@ export class TopComponent implements OnInit, OnDestroy {
   isEnd:boolean = false;
 
   constructor(
+    private store: Store,
     private activatedRoute:ActivatedRoute,
     private httpTopService:HttpTopService,
-    private breadcrumbService:BreadcrumbService,
     private titleMetaService:TitleMetaService
   ) {
 
@@ -38,7 +39,7 @@ export class TopComponent implements OnInit, OnDestroy {
       }
     )
     this.getPageCount();
-    this.breadcrumbService.setBreadcrumbs([]);
+    this.store.dispatch(setBreadcrumbs({breadcrumbs:[]}));
     this.titleMetaService.setTitle("sushi karaage")
     this.titleMetaService.setMetaData(
       this.titleMetaService.getCoalescenceMetaDefinition([

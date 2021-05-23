@@ -1,15 +1,24 @@
 import { createReducer, on } from '@ngrx/store';
 import { setBreadcrumbs, resetBreadcrumbs } from './breadcrumb.actions';
-import { KaraageBreadcrumbs } from 'src/@types/karaage-breadcrumb';
+import { BreadcrumbsState } from './breadcrumb.state'
 
-export const initialBreadcrumbs:KaraageBreadcrumbs = [];
+export const breadcrumbsFeatureKey = 'Breadcrumbs';
+export const initialBreadcrumbs:BreadcrumbsState = {
+  breadcrumbs:[]
+};
 
 const _breadcrumbsReducer = createReducer(
   initialBreadcrumbs,
-  on(setBreadcrumbs, (state,props) => {
-    return [...props.breadcrumbs]
-  }),
-  on(resetBreadcrumbs, (state) => []),
+  on(setBreadcrumbs, (state,props) => (
+    {
+      breadcrumbs:[...props.breadcrumbs]
+    }
+  )),
+  on(resetBreadcrumbs, (state) => (
+    {
+      breadcrumbs:[]
+    }
+  )),
 );
 
 export function breadcrumbsReducer(state:any, action:any) {
