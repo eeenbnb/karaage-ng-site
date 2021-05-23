@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { BreadcrumbService } from '../../../service/breadcrumb/breadcrumb.service'
 import { KaraageBreadcrumbs } from 'src/@types/karaage-breadcrumb';
+
+import { Store, select } from '@ngrx/store';
+import { selectBreadcrumbs } from '../../../ngrx/breadcrumb/breadcrumb.selectors'
 
 //import { ReactItemBreadcrumb } from '../../_react-items/item-breadcrumb'
 
@@ -15,16 +17,14 @@ export class ItemBreadcrumbComponent implements OnInit, OnDestroy {
   breadcrumbs:KaraageBreadcrumbs = [];
   breadcrumbsSubscription:Subscription;
 
-  //reactItemBreadcrumb = ReactItemBreadcrumb;
+  breadcrumbs$ = this.store.pipe(select(selectBreadcrumbs));
 
   constructor(
-    private breadcrumbService:BreadcrumbService
+    private store:Store,
   ) {
-    this.breadcrumbsSubscription = this.breadcrumbService.getBreadcrumbsChageEvent().subscribe(
-      (breadcrumbs:KaraageBreadcrumbs)=>{
-        this.breadcrumbs = breadcrumbs;
-      }
-    );
+    this.breadcrumbsSubscription = this.breadcrumbs$.subscribe((data)=>{
+      this.breadcrumbs = data.breadcrumbs;
+    })
   }
 
   ngOnInit(): void {
