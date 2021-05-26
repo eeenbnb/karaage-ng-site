@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { setBreadcrumbs } from '../../../ngrx/breadcrumb/breadcrumb.actions'
 
@@ -17,6 +18,7 @@ export class TopComponent implements OnInit, OnDestroy {
   topItems:KaraageArticle[] = [];
   pageCount:number = 1;
   maxPageCount:number = 1;
+  routerSubscription:Subscription;
   isFirstLoadComplate:boolean = false;
   isPageCountLoadComplate:boolean = false;
   isEnd:boolean = false;
@@ -27,18 +29,17 @@ export class TopComponent implements OnInit, OnDestroy {
     private httpTopService:HttpTopService,
     private titleMetaService:TitleMetaService
   ) {
-
-  }
-
-  ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(
+    this.routerSubscription = this.activatedRoute.paramMap.subscribe(
       (params:ParamMap)=>{
         let p = params.get("pageCount");
-        this.pageCount = isNaN(Number(p)) ? Number(p) : 1;
+        this.pageCount = p ?  Number(p) : 1;
         this.topItems = [];
         this.getItems();
       }
     )
+  }
+
+  ngOnInit(): void {
     this.getPageCount();
     this.store.dispatch(setBreadcrumbs({breadcrumbs:[]}));
     this.titleMetaService.setTitle("sushi karaage")
@@ -80,10 +81,6 @@ export class TopComponent implements OnInit, OnDestroy {
         this.isEnd = true;
       }
     );
-  }
-
-  bottomLoad(){
-    this.getItems();
   }
 
 }

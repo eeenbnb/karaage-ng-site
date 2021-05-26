@@ -14,7 +14,10 @@ const sitemap = {
 };
 const files = glob.sync('./src/assets/data/top-*.json');
 
-files.forEach(file => {
+files.forEach((file,i) => {
+  if(i != 0){
+    urls.push(urls[0] + `page/${i + 1}`)
+  }
   let json = JSON.parse(fs.readFileSync(file,'utf8'));
   json.forEach(item => {
     urls.push(urls[0] + `article/${item.path}`)
