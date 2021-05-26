@@ -53,6 +53,7 @@ export class TopComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.titleMetaService.removeMetaData();
+    this.routerSubscription.unsubscribe();
   }
 
   private getItems(){
