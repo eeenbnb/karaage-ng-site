@@ -11,14 +11,24 @@
 .title{
   color: var(--color-Paragraph);
   font-size: 16px;
+
+  display: flex;
+  justify-content: center;
 }
 
 .link{
+  margin-top: 8px;
+  
   a{
     color: var(--color-Highlight);
     font-size: 16px;
+    margin: 4px;
   }
-
+  &__img{
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
