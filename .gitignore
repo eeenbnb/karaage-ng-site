@@ -49,3 +49,5 @@ Thumbs.db
 scully.log
 /docs
 /docs-static
+/ios
+/android
