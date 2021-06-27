@@ -7,7 +7,7 @@
     <div class="header__inner__hum" (click)="isViewHumItem = !isViewHumItem"></div>
 
     <div class="hum-item" [attr.is-view]="isViewHumItem">
-      <card-origin [isNoPadding]="true">
+      <card-origin class="is-no-padding">
         <a class="hum-item__one" routerLink="/feature/profile" (click)="isViewHumItem = false">
           自己紹介
         </a>

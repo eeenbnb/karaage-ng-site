@@ -1,21 +1,18 @@
+<header class="root-content-header">
+  <root-header></root-header>
+</header>
+
 <main class="root-content">
-  <header class="root-content-header">
-    <root-header></root-header>
-  </header>
+  <aside class="root-content-side">
+    <root-side></root-side>
+  </aside>
 
-  <div class="root-content-main">
-    <aside class="root-content-side">
-      <root-side></root-side>
-    </aside>
-
-    <div class="root-content-main-inner">
-      <div class="root-content-main-inner-breadcrumb" *ngIf="isBreadcrumb">
-        <item-breadcrumb></item-breadcrumb>
-      </div>
-      <ng-content></ng-content>
+  <div class="root-content-inner">
+    <div class="root-content-inner-breadcrumb" *ngIf="isBreadcrumb">
+      <item-breadcrumb></item-breadcrumb>
     </div>
-
-    <aside class="root-content-side"></aside>
+    <ng-content></ng-content>
   </div>
 
+  <aside class="root-content-side"></aside>
 </main>

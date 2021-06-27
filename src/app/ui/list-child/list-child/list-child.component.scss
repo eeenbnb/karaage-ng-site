@@ -1,0 +1,9 @@
+:host{
+  display: block;
+  &:not(:first-child){
+    margin-top: var(--size-itemDistanceMargin);
+  }
+  &:not(:last-child){
+    margin-bottom: var(--size-itemDistanceMargin);
+  }
+}
