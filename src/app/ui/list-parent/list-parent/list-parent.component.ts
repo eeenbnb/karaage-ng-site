@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'list-parent',
   templateUrl: './list-parent.component.html',
-  styleUrls: ['./list-parent.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./list-parent.component.scss']
 })
 export class ListParentComponent implements OnInit {
 
