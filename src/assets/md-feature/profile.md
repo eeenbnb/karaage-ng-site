@@ -17,7 +17,7 @@ jquery, Angular, AngularJs, React.js, Vue.js, Cordova, WebPack,
 
 
 - 2018〜
-  - 株式会社Meily CTO
+  - 株式会社Meily
     - Meilyのアプリ、webサイト、クライアント様のアプリケーション等の設計、開発、運用
       - https://meilyweb.com/
       - https://apps.apple.com/JP/app/id1348238335
