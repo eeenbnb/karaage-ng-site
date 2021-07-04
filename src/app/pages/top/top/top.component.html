@@ -8,21 +8,28 @@
   </list-child>
 
   <!-- items -->
-  <list-child *ngFor="let item of topItems">
-    <card-origin-artric
-      [article]="item"
-    >
-    </card-origin-artric>
-  </list-child>
+  <ng-container *ngIf="topItems$ | async as topItems; else loading">
+    <list-child *ngFor="let item of topItems">
+      <card-origin-artric
+        [article]="item"
+      >
+      </card-origin-artric>
+    </list-child>
+  </ng-container>
 
   <!-- bottom -->
   <list-child>
     <item-pagination
       [(count)]="pageCount"
-      [maxCount]="maxPageCount"
-      *ngIf="isPageCountLoadComplate"
+      [maxCount]="(maxPageCount$ | async)?.count"
     >
     </item-pagination>
   </list-child>
 
 </list-parent>
+
+<ng-template #loading>
+  <list-child *ngFor="let _ of emptyArrays">
+    <card-origin-article-loading></card-origin-article-loading>
+  </list-child>
+</ng-template>

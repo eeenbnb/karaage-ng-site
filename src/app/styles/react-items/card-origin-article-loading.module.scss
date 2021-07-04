@@ -1,0 +1,43 @@
+$base-color: #ddd
+$shine-color: #e8e8e8
+$animation-duration: 1.6s
+
+.card-origin-article-loading{
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-gap: 0 var(--size-itemDistanceMargin);
+  &__image{
+    width: 120px;
+    height: 120px;
+    animation: shine-avatar $animation-duration infinite linear
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    &__title{
+      height: 16px;
+      animation: shine-lines $animation-duration infinite linear
+    }
+  }
+}
+
+@keyframes shine-lines{
+  0%{
+    background-position: -100px
+  }
+  40%, 100%{
+    background-position: 140px
+  }
+
+}
+
+@keyframes shine-avatar{
+  0%{
+    background-position: -100px + $avatar-offset;
+  }
+  40%, 100%{
+    background-position: 140px + $avatar-offset
+  }
+
+}

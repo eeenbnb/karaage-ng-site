@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { KaraageBreadcrumbs } from 'src/@types/karaage-breadcrumb';
 
@@ -13,25 +13,12 @@ import { selectBreadcrumbs } from '../../../ngrx/breadcrumb/breadcrumb.selectors
   templateUrl: './item-breadcrumb.component.html',
   styleUrls: ['./item-breadcrumb.component.scss']
 })
-export class ItemBreadcrumbComponent implements OnInit, OnDestroy {
-  breadcrumbs:KaraageBreadcrumbs = [];
-  breadcrumbsSubscription:Subscription;
-
-  breadcrumbs$ = this.store.pipe(select(selectBreadcrumbs));
+export class ItemBreadcrumbComponent implements OnInit {
+  breadcrumbs$:Observable<{breadcrumbs:KaraageBreadcrumbs | undefined}> = this.store.pipe(select(selectBreadcrumbs));
 
   constructor(
     private store:Store,
-  ) {
-    this.breadcrumbsSubscription = this.breadcrumbs$.subscribe((data)=>{
-      this.breadcrumbs = data.breadcrumbs;
-    })
-  }
+  ) {}
 
-  ngOnInit(): void {
-
-  }
-
-  ngOnDestroy(): void {
-    this.breadcrumbsSubscription.unsubscribe();
-  }
+  ngOnInit(): void {}
 }

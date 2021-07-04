@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactItemPagination } from '../../_react-items/item-pagination'
 
@@ -7,8 +7,8 @@ import { ReactItemPagination } from '../../_react-items/item-pagination'
   templateUrl: './item-pagination.component.html',
   styleUrls: ['./item-pagination.component.scss']
 })
-export class ItemPaginationComponent implements OnInit {
-  @Input() maxCount:number = 1;
+export class ItemPaginationComponent implements OnInit, OnChanges {
+  @Input() maxCount:number | undefined = 1;
   @Input() count:number = 1;
   @Output() countChange:EventEmitter<number> = new EventEmitter<number>();
 
@@ -19,7 +19,9 @@ export class ItemPaginationComponent implements OnInit {
     private router:Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngOnChanges(){
     this.item = {
       maxCount: this.maxCount,
       count: this.count,
