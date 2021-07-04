@@ -11,7 +11,7 @@ import { RootContentModule } from './ui/root-content/root-content.module';
 import { AppComponent } from './app.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 
-import { NgrxModule } from './ngrx/ngrx.module'
+import { NgrxModule } from './ngrx/ngrx.module';
 
 @NgModule({
   declarations: [

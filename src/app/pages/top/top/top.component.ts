@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable, Subject } from 'rxjs';
+import { switchMap, map, tap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { setBreadcrumbs } from '../../../ngrx/breadcrumb/breadcrumb.actions'
 
@@ -15,32 +16,27 @@ import { KaraageArticle } from 'src/@types/karaage-article';
   styleUrls: ['./top.component.scss']
 })
 export class TopComponent implements OnInit, OnDestroy {
-  topItems:KaraageArticle[] = [];
   pageCount:number = 1;
-  maxPageCount:number = 1;
-  routerSubscription:Subscription;
-  isFirstLoadComplate:boolean = false;
-  isPageCountLoadComplate:boolean = false;
-  isEnd:boolean = false;
+  emptyArrays:number[] = [...Array(10)];
+  topItems$:Observable<KaraageArticle[]>;
+  maxPageCount$:Observable<{count:number | undefined}> = this.httpTopService.getTopPageCount();
 
   constructor(
     private store: Store,
     private activatedRoute:ActivatedRoute,
     private httpTopService:HttpTopService,
-    private titleMetaService:TitleMetaService
+    private titleMetaService:TitleMetaService,
   ) {
-    this.routerSubscription = this.activatedRoute.paramMap.subscribe(
-      (params:ParamMap)=>{
+    this.topItems$ = this.activatedRoute.paramMap.pipe(
+      switchMap((params) => {
         let p = params.get("pageCount");
         this.pageCount = p ?  Number(p) : 1;
-        this.topItems = [];
-        this.getItems();
-      }
-    )
+        return this.httpTopService.getTopData(this.pageCount);
+      })
+    );
   }
 
   ngOnInit(): void {
-    this.getPageCount();
     this.store.dispatch(setBreadcrumbs({breadcrumbs:[]}));
     this.titleMetaService.setTitle("sushi karaage")
     this.titleMetaService.setMetaData(
@@ -53,35 +49,6 @@ export class TopComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.titleMetaService.removeMetaData();
-    this.routerSubscription.unsubscribe();
-  }
-
-  private getItems(){
-    if(this.isEnd) return;
-
-    this.httpTopService.getTopData(this.pageCount).subscribe(
-      (list:KaraageArticle[])=>{
-        if(list){
-          this.topItems = list;
-          this.isFirstLoadComplate = true;
-        }
-      },
-      (err)=>{
-        this.isEnd = true;
-      }
-    );
-  }
-
-  private getPageCount(){
-    this.httpTopService.getTopPageCount().subscribe(
-      (data:{count:number})=>{
-        this.maxPageCount = data.count;
-        this.isPageCountLoadComplate = true;
-      },
-      (err)=>{
-        this.isEnd = true;
-      }
-    );
   }
 
 }
