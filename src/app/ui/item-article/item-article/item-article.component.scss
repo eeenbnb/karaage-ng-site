@@ -1,5 +1,17 @@
+@import "../../../styles/mixins/loading-animation";
+
 :host{
   display: block;
+}
+
+.loading-title{
+  height: 50px;
+  @include loading-animation;
+}
+
+.loading-text{
+  height: 24px;
+  @include loading-animation;
 }
 
 .item-article{

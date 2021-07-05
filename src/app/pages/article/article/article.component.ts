@@ -21,6 +21,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
   markdown:string = "";
   routerSubscription:Subscription;
 
+  isLoading:boolean = true;
   isNoContent:boolean = false;
   articleType:string = ArticleType.Article;
 
@@ -104,6 +105,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
         { name: 'og:url', content: 'https://sushi.karaage.tokyo/#/' + [this.articleType,date].join("/") },
       ])
     );
+    this.isLoading = false;
   }
 
   private setError():void{
