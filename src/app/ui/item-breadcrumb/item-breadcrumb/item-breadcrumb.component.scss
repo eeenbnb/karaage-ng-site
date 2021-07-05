@@ -1,3 +1,10 @@
+@import "../../../styles/mixins/loading-animation";
+
+.loading{
+  height: 24px;
+  @include loading-animation;
+}
+
 .breadcrumb{
   list-style: none;
   display: flex;

@@ -1,0 +1,29 @@
+@mixin loading-animation{
+  &.w-80{
+    width: 80%;
+  }
+  &.w-60{
+    width: 60%;
+  }
+  &.w-40{
+    width: 40%;
+  }
+  &.w-20{
+    width: 20%;
+  }
+  border-radius: var(--size-cardBorder);
+  background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 32px, #ddd 100%);
+  animation-name: shine-avatar;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shine-avatar{
+  0%{
+    background-position: 0px;
+  }
+  100%{
+    background-position: 670px;
+  }
+}

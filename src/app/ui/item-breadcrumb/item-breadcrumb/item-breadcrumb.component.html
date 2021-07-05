@@ -1,4 +1,4 @@
-<card-origin *ngIf="(breadcrumbs$ | async)?.breadcrumbs?.length != 0">
+<card-origin *ngIf="(breadcrumbs$ | async)?.breadcrumbs?.length != 0;else loading">
   <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
     <ng-container *ngFor="let breadcrumb of (breadcrumbs$ | async)?.breadcrumbs;let i = index">
       <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -10,3 +10,9 @@
     </ng-container>
   </ol>
 </card-origin>
+
+<ng-template #loading>
+  <card-origin>
+    <div class="loading"></div>
+  </card-origin>
+</ng-template>
