@@ -9,7 +9,7 @@ import * as ReactDOM from 'react-dom';
   styles: [
    `
      :host {
-       display: inline-block;
+       display: block;
      }
    `,
  ],
