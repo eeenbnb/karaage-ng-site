@@ -1,5 +1,9 @@
 @import "../../../styles/mixins/line-clamp.scss";
 
+:host{
+  display: block;
+}
+
 .link{
   text-decoration: none;
 }
