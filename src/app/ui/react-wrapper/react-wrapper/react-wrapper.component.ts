@@ -5,7 +5,14 @@ import * as ReactDOM from 'react-dom';
 
 @Component({
   selector: 'react-wrapper',
-  template: ''
+  template: '',
+  styles: [
+   `
+     :host {
+       display: inline-block;
+     }
+   `,
+ ],
 })
 export class ReactWrapperComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() reactCompoent:React.Component<any> | any;

@@ -1,12 +1,16 @@
 @import "../../../styles/mixins/responsive.scss";
 
-.root-content{
+:host {
+  display: block;
+}
+
+.root-content {
   min-height: calc(100vh);
   background-color: var(--color-Background);
-  background-image: url('/assets/background/bg.svg');
+  background-image: url("/assets/background/bg.svg");
   background-size: 72px 72px;
 
-  &-header{
+  &-header {
     width: 100vw;
     height: var(--size-header);
     position: fixed;
@@ -14,48 +18,46 @@
     left: 0;
   }
 
-  &-side{
+  &-side {
     margin: var(--size-itemDistanceMargin);
-    @include PcCss{
+    @include PcCss {
       width: var(--size-sideItemSize);
     }
-    @include SideHidenCss{
+    @include SideHidenCss {
       width: var(--size-conteinerSize);
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
-    @include MobileCss{
+    @include MobileCss {
       width: auto;
     }
-    &:empty{
+
+    &:empty {
       height: 0;
     }
   }
-
   padding-top: var(--size-header);
   padding-bottom: var(--size-itemDistanceMargin);
-
-  @include PcCss{
+  @include PcCss {
     display: flex;
     justify-content: center;
   }
-  @include SideHidenCss{
+  @include SideHidenCss {
     flex-direction: column;
     align-items: center;
   }
-  &-inner{
+
+  &-inner {
     margin-top: var(--size-itemDistanceMargin);
     margin-bottom: var(--size-itemDistanceMargin);
-
-    @include MobileCss{
+    @include MobileCss {
       margin-left: var(--size-itemInnerPadding);
       margin-right: var(--size-itemInnerPadding);
     }
-
-    @include PcCss{
+    @include PcCss {
       width: var(--size-conteinerSize);
     }
 
-    &-breadcrumb{
+    &-breadcrumb {
       margin-bottom: var(--size-itemDistanceMargin);
     }
   }
