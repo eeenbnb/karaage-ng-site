@@ -98,9 +98,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
     this.titleMetaService.setTitle(this.title + ' | sushi karaage');
     this.titleMetaService.setMetaData(
       this.titleMetaService.getCoalescenceMetaDefinition([
-        { name: 'description',content: this.markdown.slice(0,300) },
+        { name: 'description',content: this.markdown.slice(0,300).replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'') },
         { name: 'og:site_name', content: this.title + ' | sushi karaage' },
-        { name: 'og:description', content: this.markdown.slice(0,300) },
+        { name: 'og:description', content: this.markdown.slice(0,300).replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'') },
         { name: 'og:title', content: this.title + " | sushi karaage" },
         { name: 'og:url', content: 'https://sushi.karaage.tokyo/#/' + [this.articleType,date].join("/") },
       ])

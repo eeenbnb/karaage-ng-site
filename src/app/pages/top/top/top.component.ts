@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Subscription, Observable, Subject } from 'rxjs';
-import { switchMap, map, tap } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
-import { setBreadcrumbs } from '../../../ngrx/breadcrumb/breadcrumb.actions'
+import { setBreadcrumbs } from 'src/app/ngrx/breadcrumb/breadcrumb.actions'
 
-import { HttpTopService } from '../../../service/http-top/http-top.service'
-import { TitleMetaService } from '../../../service/title-meta/title-meta.service'
+import { HttpTopService } from 'src/app/service/http-top/http-top.service'
+import { TitleMetaService } from 'src/app/service/title-meta/title-meta.service'
 
 import { KaraageArticle } from 'src/@types/karaage-article';
 
