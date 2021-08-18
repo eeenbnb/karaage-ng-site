@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "node src/build/generate-list.js && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer && cp CNAME ./docs/CNAME && node src/build/generate-sitemap.js && node src/build/generate-rss.js",
-    "build:netlify": "node src/build/generate-list.js && ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer --stats-json && node src/build/generate-sitemap.js && node src/build/generate-rss.js && cp -r ./storybook-static ./docs/assets/stroybook && cp _redirects ./docs/_redirects && npx scully --",
+    "build": "node src/build/generate-list.js && ng build --configuration production --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer && cp CNAME ./docs/CNAME && node src/build/generate-sitemap.js && node src/build/generate-rss.js",
+    "build:netlify": "node src/build/generate-list.js && ng build --configuration production --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer --stats-json && node src/build/generate-sitemap.js && node src/build/generate-rss.js && cp -r ./storybook-static ./docs/assets/stroybook && cp _redirects ./docs/_redirects && npx scully --",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -57,8 +57,8 @@
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^12.1.0",
-    "@angular-devkit/build-angular": "^12.0.5",
-    "@angular/cli": "^12.0.5",
+    "@angular-devkit/build-angular": "^12.2.1",
+    "@angular/cli": "^12.2.1",
     "@angular/compiler-cli": "^12.0.5",
     "@babel/core": "^7.15.0",
     "@compodoc/compodoc": "^1.1.14",
