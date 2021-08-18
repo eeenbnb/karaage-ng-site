@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute, ActivationEnd, NavigationEnd } from '@angular/router';
+import { Router, ActivationEnd, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+
+import { PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 import { GaService } from '../../../service/ga/ga.service'
 import { CanonicalService } from '../../../service/canonical/canonical.service'
@@ -17,16 +20,18 @@ export class RootContentComponent implements OnInit, OnDestroy {
 
   isBreadcrumb:boolean = true;
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private router:Router,
-    private activatedRoute:ActivatedRoute,
     private gaService:GaService,
     private canonicalService:CanonicalService
   ) {
     this.navigationEndSubscription = this.router.events.pipe( filter(event => event instanceof NavigationEnd) ).subscribe(
       (params: any) => {
-        this.gaService.sendPageView(params.url);
-        this.canonicalService.setCanonicalURL();
-        window.scroll({top: 0});
+        if(isPlatformBrowser(platformId)){
+          this.gaService.sendPageView(params.url);
+          this.canonicalService.setCanonicalURL();
+          window.scroll({top: 0});
+        }
       }
     );
 

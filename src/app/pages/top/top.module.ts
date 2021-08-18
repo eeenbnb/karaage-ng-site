@@ -5,8 +5,8 @@ import { TopRoutingModule } from './top-routing.module';
 import { TopComponent } from './top/top.component';
 
 import { CardOriginArtricModule } from '../../ui/card-origin-artric/card-origin-artric.module'
-import { CardOriginArticleLoadingModule } from '../../ui/card-origin-article-loading/card-origin-article-loading.module'
 import { CardOriginTitleModule } from '../../ui/card-origin-title/card-origin-title.module'
+import { CardOriginArticleLoadingModule } from '../../ui/card-origin-article-loading/card-origin-article-loading.module'
 
 import { ListParentModule } from '../../ui/list-parent/list-parent.module'
 import { ListChildModule } from '../../ui/list-child/list-child.module'

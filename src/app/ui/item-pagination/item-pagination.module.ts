@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
 import { ItemPaginationComponent } from './item-pagination/item-pagination.component';
 
-import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
+import { CardOriginModule } from '../card-origin/card-origin.module'
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
   imports: [
     CommonModule,
     RouterModule,
-    ReactWrapperModule
+    CardOriginModule,
   ],
   exports: [
     ItemPaginationComponent

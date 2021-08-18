@@ -3,7 +3,6 @@ import { DOCUMENT } from '@angular/common';
 import { environment } from '../../../environments/environment';
 
 declare let gtag: any; // グローバル変数gtagを解決
-declare let window: any; // グローバル変数gtagを解決
 
 @Injectable({
   providedIn: 'root'

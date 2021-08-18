@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardOriginArticleLoadingComponent } from './card-origin-article-loading/card-origin-article-loading.component';
 
-import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
+import { CardOriginModule } from '../card-origin/card-origin.module'
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
   ],
   imports: [
     CommonModule,
-    ReactWrapperModule
+    CardOriginModule
   ],
   exports: [
     CardOriginArticleLoadingComponent
