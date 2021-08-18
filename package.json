@@ -19,7 +19,7 @@
     "serve:ssr": "node dist/karaage-ng-site/server/main.js",
     "build:ssr": "ng build && ng run karaage-ng-site:server",
     "prerender": "ng run karaage-ng-site:prerender",
-    "prerender:route": "node src/build/generate-list.js && ng run karaage-ng-site:prerender --routes-file route.txt && node src/build/generate-sitemap.js && node src/build/generate-rss.js"
+    "prerender:route": "node src/build/generate-list.js && node src/build/generate-route-txt.js && ng run karaage-ng-site:prerender --routes-file route.txt && node src/build/generate-sitemap.js && node src/build/generate-rss.js"
   },
   "private": true,
   "dependencies": {
