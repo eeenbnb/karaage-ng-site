@@ -1,0 +1,13 @@
+[build]
+  publish = "dist/karaage-ng-site/browser"
+  command = "npm run prerender:route"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

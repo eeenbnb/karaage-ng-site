@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CardOriginArtricComponent } from './card-origin-artric/card-origin-artric.component';
 
-import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
+import { CardOriginModule } from '../card-origin/card-origin.module'
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { ReactWrapperModule } from '../react-wrapper/react-wrapper.module'
   imports: [
     CommonModule,
     RouterModule,
-    ReactWrapperModule
+    CardOriginModule
   ],
   exports: [
     CardOriginArtricComponent

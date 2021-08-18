@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { ReactCardOriginTitle } from '../../_react-items/card-origin-title'
-
 @Component({
   selector: 'card-origin-title',
   templateUrl: './card-origin-title.component.html',
@@ -9,7 +7,6 @@ import { ReactCardOriginTitle } from '../../_react-items/card-origin-title'
 })
 export class CardOriginTitleComponent implements OnInit {
   @Input() title:string = "";
-  reactCardOriginTitle = ReactCardOriginTitle;
 
   constructor() { }
 

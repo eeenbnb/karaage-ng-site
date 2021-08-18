@@ -6,30 +6,30 @@ import { ArticleType } from '../const-data/article';
 const routes: Routes = [
   {
     path: "",
-    loadChildren: ()=> import("../pages/top/top.module").then(m => m.TopModule),
-    data:{
+    loadChildren: () => import("../pages/top/top.module").then(m => m.TopModule),
+    data: {
       breadcrumb: false,
     }
   },
   {
     path: "article",
-    loadChildren: ()=> import("../pages/article/article.module").then(m => m.ArticleModule),
-    data:{
+    loadChildren: () => import("../pages/article/article.module").then(m => m.ArticleModule),
+    data: {
       articleType: ArticleType.Article
     }
   },
   {
     path: "feature",
-    loadChildren: ()=> import("../pages/article/article.module").then(m => m.ArticleModule),
-    data:{
+    loadChildren: () => import("../pages/article/article.module").then(m => m.ArticleModule),
+    data: {
       articleType: ArticleType.Feature
     }
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{
-    //useHash: true,
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
   })],
   exports: [RouterModule]
 })

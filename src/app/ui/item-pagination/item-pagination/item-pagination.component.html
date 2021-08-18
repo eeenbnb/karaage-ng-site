@@ -1,5 +1,9 @@
-<react-wrapper
-  [reactCompoent]="ReactItemPagination"
-  [prop]="item"
-  *ngIf="item.maxCount"
-></react-wrapper>
+<div class="item-pagination">
+  <div class="item-pagination__item" *ngFor="let count of _maxCount">
+    <card-origin class="is-no-padding">
+      <a class="item-pagination__item__inner">
+        {{count}}
+      </a>
+    </card-origin>
+  </div>
+</div>

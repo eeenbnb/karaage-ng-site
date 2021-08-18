@@ -33,6 +33,6 @@ urls.forEach(
 );
 const xml = builder.buildObject(sitemap);
 
-fs.writeFileSync(`./docs/sitemap.xml`,xml,(err)=>{
+fs.writeFileSync(`./dist/karaage-ng-site/browser/sitemap.xml`,xml,(err)=>{
   if(err) console.log(err);
 });

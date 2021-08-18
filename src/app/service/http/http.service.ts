@@ -12,13 +12,13 @@ export class HttpService {
   ) { }
 
   getURLDataToResponseTypeJson(URL:string): Observable<any>{
-    return this.httpClient.get(URL,{
+    return this.httpClient.get("https://sushi.karaage.tokyo/" + URL,{
       responseType: "json"
     });
   };
 
   getURLDataToResponseTypeText(URL:string): Observable<string>{
-    return this.httpClient.get(URL,{
+    return this.httpClient.get("https://sushi.karaage.tokyo/" + URL,{
       responseType: "text"
     });
   };

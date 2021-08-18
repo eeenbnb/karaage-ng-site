@@ -31,7 +31,7 @@
                 "externals": "replace"
               }
             },
-            "outputPath": "docs/",
+            "outputPath": "dist/karaage-ng-site/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -147,6 +147,68 @@
               "devServerTarget": "karaage-ng-site:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-builders/custom-webpack:server",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.js",
+              "mergeRules": {
+                "externals": "replace"
+              }
+            },
+            "outputPath": "dist/karaage-ng-site/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "karaage-ng-site:build:development",
+              "serverTarget": "karaage-ng-site:server:development"
+            },
+            "production": {
+              "browserTarget": "karaage-ng-site:build:production",
+              "serverTarget": "karaage-ng-site:server:production"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "karaage-ng-site:build:production",
+              "serverTarget": "karaage-ng-site:server:production"
+            },
+            "development": {
+              "browserTarget": "karaage-ng-site:build:development",
+              "serverTarget": "karaage-ng-site:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

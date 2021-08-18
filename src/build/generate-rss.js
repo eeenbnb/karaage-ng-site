@@ -36,6 +36,6 @@ json.forEach(item => {
 
 const xml = builder.buildObject(rss);
 console.log(xml);
-fs.writeFileSync(`./docs/rss.xml`,xml,(err)=>{
+fs.writeFileSync(`./dist/karaage-ng-site/browser/rss.xml`,xml,(err)=>{
   if(err) console.log(err);
 });

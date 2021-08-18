@@ -1,5 +1,4 @@
 @import "../../../styles/mixins/line-clamp.scss";
-
 :host{
   display: block;
 }
@@ -7,4 +6,38 @@
 .link{
   display: block;
   text-decoration: none;
+}
+
+.card-origin-article{
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-gap: 0 var(--size-itemDistanceMargin);
+  &__image{
+    width: 120px;
+    height: 120px;
+    &__img{
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    &__title{
+      color: var(--color-Paragraph);
+      font-size: 16px;
+      @include line-clamp(2);
+    }
+    &__button{
+      margin-top: auto;
+      width: 100%;
+      height: 40px;
+      border: none;
+      background-color: var(--color-Button);
+      color: var(--color-Paragraph);
+      font-size: 14px;
+    }
+  }
 }
