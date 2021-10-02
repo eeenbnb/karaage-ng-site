@@ -8,9 +8,8 @@ describe('ListParentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListParentComponent ]
-    })
-    .compileComponents();
+      declarations: [ListParentComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

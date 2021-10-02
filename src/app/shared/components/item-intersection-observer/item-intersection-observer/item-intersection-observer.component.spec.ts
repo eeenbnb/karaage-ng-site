@@ -8,9 +8,8 @@ describe('ItemIntersectionObserverComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemIntersectionObserverComponent ]
-    })
-    .compileComponents();
+      declarations: [ItemIntersectionObserverComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

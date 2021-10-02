@@ -5,18 +5,16 @@ import { KaraageArticle } from 'src/@types/karaage-article';
 @Component({
   selector: 'card-origin-artric',
   templateUrl: './card-origin-artric.component.html',
-  styleUrls: ['./card-origin-artric.component.scss']
+  styleUrls: ['./card-origin-artric.component.scss'],
 })
 export class CardOriginArtricComponent implements OnInit {
-  @Input() article:KaraageArticle ={
-    path: "",
-    title: "",
-    thumbnail: "",
+  @Input() article: KaraageArticle = {
+    path: '',
+    title: '',
+    thumbnail: '',
   };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

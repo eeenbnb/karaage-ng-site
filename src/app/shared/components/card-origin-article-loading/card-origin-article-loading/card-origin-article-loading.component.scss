@@ -2,45 +2,45 @@ $base-color: #ddd;
 $shine-color: #e8e8e8;
 $animation-duration: 1.6s;
 
-:host{
+:host {
   display: block;
 }
 
-.card-origin-article-loading{
+.card-origin-article-loading {
   display: grid;
   grid-template-columns: 120px 1fr;
   grid-gap: 0 var(--size-itemDistanceMargin);
-  &__image{
+  &__image {
     width: 120px;
     height: 120px;
-    animation: shine-avatar $animation-duration infinite linear
+    animation: shine-avatar $animation-duration infinite linear;
   }
 
-  &__content{
+  &__content {
     display: flex;
     flex-direction: column;
-    &__title{
+    &__title {
       height: 16px;
-      animation: shine-lines $animation-duration infinite linear
+      animation: shine-lines $animation-duration infinite linear;
     }
   }
 }
 
-@keyframes shine-lines{
-  0%{
-    background-position: -100px
+@keyframes shine-lines {
+  0% {
+    background-position: -100px;
   }
-  40%, 100%{
-    background-position: 140px
+  40%,
+  100% {
+    background-position: 140px;
   }
-
 }
 
-@keyframes shine-avatar{
-  0%{
+@keyframes shine-avatar {
+  0% {
     background-position: -120px;
   }
-  100%{
+  100% {
     background-position: 100%;
   }
 }

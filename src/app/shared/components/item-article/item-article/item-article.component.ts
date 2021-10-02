@@ -4,14 +4,12 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   selector: 'item-article',
   templateUrl: './item-article.component.html',
   styleUrls: ['./item-article.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ItemArticleComponent implements OnInit {
-  @Input() markdown:string = "";
+  @Input() markdown: string = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-:host{
+:host {
   display: block;
   padding: var(--size-itemInnerPadding);
   background-color: var(--color-Main);
@@ -6,6 +6,6 @@
   border-radius: var(--size-cardBorder);
 }
 
-:host(.is-no-padding){
+:host(.is-no-padding) {
   padding: 0;
 }

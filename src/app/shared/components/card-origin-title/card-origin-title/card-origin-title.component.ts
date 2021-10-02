@@ -3,14 +3,12 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'card-origin-title',
   templateUrl: './card-origin-title.component.html',
-  styleUrls: ['./card-origin-title.component.scss']
+  styleUrls: ['./card-origin-title.component.scss'],
 })
 export class CardOriginTitleComponent implements OnInit {
-  @Input() title:string = "";
+  @Input() title: string = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

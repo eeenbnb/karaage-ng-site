@@ -8,9 +8,8 @@ describe('CardOriginTitleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardOriginTitleComponent ]
-    })
-    .compileComponents();
+      declarations: [CardOriginTitleComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

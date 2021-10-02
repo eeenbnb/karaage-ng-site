@@ -8,9 +8,8 @@ describe('ReactWrapperComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReactWrapperComponent ]
-    })
-    .compileComponents();
+      declarations: [ReactWrapperComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

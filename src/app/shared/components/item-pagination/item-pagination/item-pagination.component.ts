@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'item-pagination',
   templateUrl: './item-pagination.component.html',
-  styleUrls: ['./item-pagination.component.scss']
+  styleUrls: ['./item-pagination.component.scss'],
 })
 export class ItemPaginationComponent implements OnInit {
   @Input() set maxCount(num: number | undefined) {
@@ -13,8 +13,7 @@ export class ItemPaginationComponent implements OnInit {
 
   _maxCount: number[] = [];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {}
 }
