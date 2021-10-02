@@ -4,19 +4,17 @@ import { CommonModule } from '@angular/common';
 import { ArticleRoutingModule } from './article-routing.module';
 import { ArticleComponent } from './article/article.component';
 
-import { CardOriginModule } from '../../ui/card-origin/card-origin.module'
-import { ItemArticleModule } from '../../ui/item-article/item-article.module'
+import { CardOriginModule } from '@shared/components/card-origin/card-origin.module';
+import { ItemArticleModule } from '@shared/components/item-article/item-article.module';
 
 @NgModule({
-  declarations: [
-    ArticleComponent
-  ],
+  declarations: [ArticleComponent],
   imports: [
     CommonModule,
     ArticleRoutingModule,
-    
+
     CardOriginModule,
-    ItemArticleModule
-  ]
+    ItemArticleModule,
+  ],
 })
-export class ArticleModule { }
+export class ArticleModule {}

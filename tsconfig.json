@@ -17,6 +17,12 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
+    "paths": {
+      "@pages/*": ["src/app/pages/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@router/*": ["src/app/router/*"],
+      "@ui/*": ["src/app/ui/*"]
+    },
     "lib": [
       "es2018",
       "dom"

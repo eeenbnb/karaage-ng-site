@@ -1,0 +1,64 @@
+@import "src/styles/mixins/responsive.scss";
+
+:host {
+  display: block;
+}
+
+.root-content {
+  min-height: calc(100vh);
+  background-color: var(--color-Background);
+  background-image: url("/assets/background/bg.svg");
+  background-size: 72px 72px;
+
+  &-header {
+    width: 100vw;
+    height: var(--size-header);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  &-side {
+    margin: var(--size-itemDistanceMargin);
+    @include PcCss {
+      width: var(--size-sideItemSize);
+    }
+    @include SideHidenCss {
+      width: var(--size-conteinerSize);
+      margin-bottom: 0;
+    }
+    @include MobileCss {
+      width: auto;
+    }
+
+    &:empty {
+      height: 0;
+    }
+  }
+  padding-top: var(--size-header);
+  padding-bottom: var(--size-itemDistanceMargin);
+  @include PcCss {
+    display: flex;
+    justify-content: center;
+  }
+  @include SideHidenCss {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-inner {
+    margin-top: var(--size-itemDistanceMargin);
+    margin-bottom: var(--size-itemDistanceMargin);
+    @include MobileCss {
+      margin-left: var(--size-itemInnerPadding);
+      margin-right: var(--size-itemInnerPadding);
+    }
+    @include PcCss {
+      width: var(--size-conteinerSize);
+    }
+
+    &-breadcrumb {
+      margin-bottom: var(--size-itemDistanceMargin);
+    }
+  }
+}
