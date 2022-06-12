@@ -1,0 +1,33 @@
+{
+  "extensions.ignoreRecommendations": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "workbench.tree.indent": 28,
+  "explorer.compactFolders": false,
+  "stylelint.validate": ["css", "scss"],
+  "scss.validate": false,
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "http.proxy": "http://ps101.net.ccc.co.jp:8080",
+  "http.proxyStrictSSL": false
+}
